@@ -123,6 +123,60 @@ MaTTY_Lab/fast:
 	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/build
 .PHONY : MaTTY_Lab/fast
 
+errors/Errors.o: errors/Errors.c.o
+
+.PHONY : errors/Errors.o
+
+# target to build an object file
+errors/Errors.c.o:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o
+.PHONY : errors/Errors.c.o
+
+errors/Errors.i: errors/Errors.c.i
+
+.PHONY : errors/Errors.i
+
+# target to preprocess a source file
+errors/Errors.c.i:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.i
+.PHONY : errors/Errors.c.i
+
+errors/Errors.s: errors/Errors.c.s
+
+.PHONY : errors/Errors.s
+
+# target to generate assembly for a file
+errors/Errors.c.s:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.s
+.PHONY : errors/Errors.c.s
+
+lexical/lex.yy.o: lexical/lex.yy.c.o
+
+.PHONY : lexical/lex.yy.o
+
+# target to build an object file
+lexical/lex.yy.c.o:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o
+.PHONY : lexical/lex.yy.c.o
+
+lexical/lex.yy.i: lexical/lex.yy.c.i
+
+.PHONY : lexical/lex.yy.i
+
+# target to preprocess a source file
+lexical/lex.yy.c.i:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.i
+.PHONY : lexical/lex.yy.c.i
+
+lexical/lex.yy.s: lexical/lex.yy.c.s
+
+.PHONY : lexical/lex.yy.s
+
+# target to generate assembly for a file
+lexical/lex.yy.c.s:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.s
+.PHONY : lexical/lex.yy.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -150,6 +204,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/main.c.s
 .PHONY : main.c.s
 
+syntactic/SyntacticDefinitions.tab.o: syntactic/SyntacticDefinitions.tab.c.o
+
+.PHONY : syntactic/SyntacticDefinitions.tab.o
+
+# target to build an object file
+syntactic/SyntacticDefinitions.tab.c.o:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o
+.PHONY : syntactic/SyntacticDefinitions.tab.c.o
+
+syntactic/SyntacticDefinitions.tab.i: syntactic/SyntacticDefinitions.tab.c.i
+
+.PHONY : syntactic/SyntacticDefinitions.tab.i
+
+# target to preprocess a source file
+syntactic/SyntacticDefinitions.tab.c.i:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.i
+.PHONY : syntactic/SyntacticDefinitions.tab.c.i
+
+syntactic/SyntacticDefinitions.tab.s: syntactic/SyntacticDefinitions.tab.c.s
+
+.PHONY : syntactic/SyntacticDefinitions.tab.s
+
+# target to generate assembly for a file
+syntactic/SyntacticDefinitions.tab.c.s:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.s
+.PHONY : syntactic/SyntacticDefinitions.tab.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +240,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... MaTTY_Lab"
+	@echo "... errors/Errors.o"
+	@echo "... errors/Errors.i"
+	@echo "... errors/Errors.s"
+	@echo "... lexical/lex.yy.o"
+	@echo "... lexical/lex.yy.i"
+	@echo "... lexical/lex.yy.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... syntactic/SyntacticDefinitions.tab.o"
+	@echo "... syntactic/SyntacticDefinitions.tab.i"
+	@echo "... syntactic/SyntacticDefinitions.tab.s"
 .PHONY : help
 
 

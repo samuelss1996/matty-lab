@@ -44,6 +44,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical"/>
+					<Add directory="/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic"/>
+					<Add directory="/mnt/c/Users/Ada/GitHub/MaTTY Lab/errors"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -67,6 +70,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical"/>
+					<Add directory="/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic"/>
+					<Add directory="/mnt/c/Users/Ada/GitHub/MaTTY Lab/errors"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -84,7 +90,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/Ada/GitHub/MaTTY Lab/errors/Errors.c">
+			<Option target="MaTTY_Lab"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Ada/GitHub/MaTTY Lab/errors/Errors.h">
+			<Option target="MaTTY_Lab"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical/lex.yy.c">
+			<Option target="MaTTY_Lab"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical/lex.yy.h">
+			<Option target="MaTTY_Lab"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Ada/GitHub/MaTTY Lab/main.c">
+			<Option target="MaTTY_Lab"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/SyntacticDefinitions.tab.c">
+			<Option target="MaTTY_Lab"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/SyntacticDefinitions.tab.h">
 			<Option target="MaTTY_Lab"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/Ada/GitHub/MaTTY Lab/CMakeLists.txt">

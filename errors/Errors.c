@@ -1,0 +1,4 @@
+
+void yyerror(char *string) {
+
+}

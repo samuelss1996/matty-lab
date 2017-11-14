@@ -4,12 +4,18 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/mnt/c/Users/Ada/GitHub/MaTTY Lab/errors/Errors.c" "/mnt/c/Users/Ada/GitHub/MaTTY Lab/cmake-build-debug/CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o"
+  "/mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical/lex.yy.c" "/mnt/c/Users/Ada/GitHub/MaTTY Lab/cmake-build-debug/CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o"
   "/mnt/c/Users/Ada/GitHub/MaTTY Lab/main.c" "/mnt/c/Users/Ada/GitHub/MaTTY Lab/cmake-build-debug/CMakeFiles/MaTTY_Lab.dir/main.c.o"
+  "/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/SyntacticDefinitions.tab.c" "/mnt/c/Users/Ada/GitHub/MaTTY Lab/cmake-build-debug/CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
+  "../lexical"
+  "../syntactic"
+  "../errors"
   )
 
 # Targets to which this target links.

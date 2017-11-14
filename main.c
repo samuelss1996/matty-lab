@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <SyntacticDefinitions.tab.h>
 
 int main() {
-    printf("Hello, World!\n");
-    return 0;
+    printf("%d", yyparse());
+
+    return EXIT_SUCCESS;
 }

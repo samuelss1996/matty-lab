@@ -81,17 +81,95 @@ CMakeFiles/MaTTY_Lab.dir/main.c.o.provides: CMakeFiles/MaTTY_Lab.dir/main.c.o.re
 CMakeFiles/MaTTY_Lab.dir/main.c.o.provides.build: CMakeFiles/MaTTY_Lab.dir/main.c.o
 
 
+CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o: CMakeFiles/MaTTY_Lab.dir/flags.make
+CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o: ../lexical/lex.yy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/Ada/GitHub/MaTTY Lab/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o   -c "/mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical/lex.yy.c"
+
+CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical/lex.yy.c" > CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.i
+
+CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical/lex.yy.c" -o CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.s
+
+CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o.requires:
+
+.PHONY : CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o.requires
+
+CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o.provides: CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o.requires
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o.provides.build
+.PHONY : CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o.provides
+
+CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o.provides.build: CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o
+
+
+CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o: CMakeFiles/MaTTY_Lab.dir/flags.make
+CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o: ../syntactic/SyntacticDefinitions.tab.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/Ada/GitHub/MaTTY Lab/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o   -c "/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/SyntacticDefinitions.tab.c"
+
+CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/SyntacticDefinitions.tab.c" > CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.i
+
+CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/SyntacticDefinitions.tab.c" -o CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.s
+
+CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o.requires:
+
+.PHONY : CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o.requires
+
+CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o.provides: CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o.requires
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o.provides.build
+.PHONY : CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o.provides
+
+CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o.provides.build: CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o
+
+
+CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o: CMakeFiles/MaTTY_Lab.dir/flags.make
+CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o: ../errors/Errors.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/Ada/GitHub/MaTTY Lab/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o   -c "/mnt/c/Users/Ada/GitHub/MaTTY Lab/errors/Errors.c"
+
+CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Users/Ada/GitHub/MaTTY Lab/errors/Errors.c" > CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.i
+
+CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/Ada/GitHub/MaTTY Lab/errors/Errors.c" -o CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.s
+
+CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o.requires:
+
+.PHONY : CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o.requires
+
+CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o.provides: CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o.requires
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o.provides.build
+.PHONY : CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o.provides
+
+CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o.provides.build: CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o
+
+
 # Object files for target MaTTY_Lab
 MaTTY_Lab_OBJECTS = \
-"CMakeFiles/MaTTY_Lab.dir/main.c.o"
+"CMakeFiles/MaTTY_Lab.dir/main.c.o" \
+"CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o" \
+"CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o" \
+"CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o"
 
 # External object files for target MaTTY_Lab
 MaTTY_Lab_EXTERNAL_OBJECTS =
 
 MaTTY_Lab: CMakeFiles/MaTTY_Lab.dir/main.c.o
+MaTTY_Lab: CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o
+MaTTY_Lab: CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o
+MaTTY_Lab: CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o
 MaTTY_Lab: CMakeFiles/MaTTY_Lab.dir/build.make
 MaTTY_Lab: CMakeFiles/MaTTY_Lab.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/Ada/GitHub/MaTTY Lab/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable MaTTY_Lab"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/Ada/GitHub/MaTTY Lab/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable MaTTY_Lab"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MaTTY_Lab.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +178,9 @@ CMakeFiles/MaTTY_Lab.dir/build: MaTTY_Lab
 .PHONY : CMakeFiles/MaTTY_Lab.dir/build
 
 CMakeFiles/MaTTY_Lab.dir/requires: CMakeFiles/MaTTY_Lab.dir/main.c.o.requires
+CMakeFiles/MaTTY_Lab.dir/requires: CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o.requires
+CMakeFiles/MaTTY_Lab.dir/requires: CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o.requires
+CMakeFiles/MaTTY_Lab.dir/requires: CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o.requires
 
 .PHONY : CMakeFiles/MaTTY_Lab.dir/requires
 

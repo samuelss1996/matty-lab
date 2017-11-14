@@ -6,7 +6,67 @@
 
 #IncludeRegexTransform: 
 
+../errors/Errors.h
+
+../lexical/lex.yy.h
+stdio.h
+-
+string.h
+-
+errno.h
+-
+stdlib.h
+-
+inttypes.h
+-
+unistd.h
+-
+
+../syntactic/SyntacticDefinitions.tab.h
+
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/errors/Errors.c
+
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical/lex.yy.c
+stdio.h
+-
+string.h
+-
+errno.h
+-
+stdlib.h
+-
+inttypes.h
+-
+SyntacticDefinitions.tab.h
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical/SyntacticDefinitions.tab.h
+unistd.h
+-
+
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/main.c
+stdio.h
+-
+stdlib.h
+-
+SyntacticDefinitions.tab.h
+-
+
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/SyntacticDefinitions.tab.c
+lex.yy.h
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/lex.yy.h
+Errors.h
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/Errors.h
+stddef.h
+-
+libintl.h
+-
+alloca.h
+-
+malloc.h
+-
+stdlib.h
+-
+stdlib.h
+-
 stdio.h
 -
 
