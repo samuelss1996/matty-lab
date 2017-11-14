@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/MaTTY_Lab.dir/main.c.o  -o MaTTY_Lab 
