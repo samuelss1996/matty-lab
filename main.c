@@ -3,7 +3,7 @@
 #include <SyntacticDefinitions.tab.h>
 
 int main() {
-    printf("%d", yyparse());
+    yyparse();
 
     return EXIT_SUCCESS;
 }

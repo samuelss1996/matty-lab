@@ -51,6 +51,8 @@ SyntacticDefinitions.tab.h
 -
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/SyntacticDefinitions.tab.c
+math.h
+-
 lex.yy.h
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/lex.yy.h
 Errors.h

@@ -47,13 +47,24 @@ extern int yydebug;
   {
     TOKEN_IDENTIFIER = 258,
     TOKEN_INTEGER_LITERAL = 259,
-    TOKEN_FLOATING_POINT_LITERAL = 260
+    TOKEN_FLOATING_POINT_LITERAL = 260,
+    NEGATIVE = 261
   };
 #endif
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
+
+union YYSTYPE
+{
+#line 7 "SyntacticDefinitions.y" /* yacc.c:1909  */
+
+    double value;
+
+#line 65 "SyntacticDefinitions.tab.h" /* yacc.c:1909  */
+};
+
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif

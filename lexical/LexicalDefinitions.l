@@ -30,12 +30,8 @@ FloatLit				({Decimals}\.{Decimals}?{Exponent}?)|({Decimals}{Exponent})|(\.{Deci
 {NewLine} 												{column = 0; yylineno++; return '\n';}
 {Blank}+												{column += yyleng;}
 
-{SingleLineCommentStart}.*								{column += yyleng;}
-"/*"([^*\n]|(\*+[^*/\n]))*\*+\/							{column += yyleng;}
-{NewLine}*("/*"([^*]|(\*+[^*/]))*\*+\/){NewLine}*		{column = 0; yylineno += charCount(yytext, '\n'); return '\n';}
-
-{DecimalLiteral}|{OctalLiteral}|{HexadecimalLiteral}	{column += yyleng; return TOKEN_INTEGER_LITERAL;}
-{FloatLit}												{column += yyleng; return TOKEN_FLOATING_POINT_LITERAL;}
+{DecimalLiteral}|{OctalLiteral}|{HexadecimalLiteral}	{column += yyleng; yylval.value = atof(yytext); return TOKEN_INTEGER_LITERAL;}
+{FloatLit}												{column += yyleng; yylval.value = atof(yytext); return TOKEN_FLOATING_POINT_LITERAL;}
 
 "+"                                                     {column += yyleng; return '+';}
 "-"                                                     {column += yyleng; return '-';}
