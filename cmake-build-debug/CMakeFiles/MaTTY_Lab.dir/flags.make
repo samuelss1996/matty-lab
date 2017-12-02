@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu90
 
 C_DEFINES = 
 
-C_INCLUDES = -I"/mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical" -I"/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic" -I"/mnt/c/Users/Ada/GitHub/MaTTY Lab/errors" 
+C_INCLUDES = -I"/mnt/c/Users/Ada/GitHub/MaTTY Lab" -I"/mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical" -I"/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic" -I"/mnt/c/Users/Ada/GitHub/MaTTY Lab/errors" -I"/mnt/c/Users/Ada/GitHub/MaTTY Lab/symbols" -I"/mnt/c/Users/Ada/GitHub/MaTTY Lab/util" 
 

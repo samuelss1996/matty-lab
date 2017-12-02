@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+..//Definitions.h
+
 ../errors/Errors.h
 
 ../lexical/lex.yy.h
@@ -23,6 +25,16 @@ unistd.h
 -
 
 ../syntactic/SyntacticDefinitions.tab.h
+
+../util/HashTable.h
+Definitions.h
+../util/Definitions.h
+LinkedList.h
+../util/LinkedList.h
+
+../util/LinkedList.h
+Definitions.h
+../util/Definitions.h
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/errors/Errors.c
 
@@ -50,6 +62,14 @@ stdlib.h
 SyntacticDefinitions.tab.h
 -
 
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/symbols/SymbolsTable.c
+Definitions.h
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/symbols/Definitions.h
+HashTable.h
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/symbols/HashTable.h
+stdlib.h
+-
+
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/SyntacticDefinitions.tab.c
 math.h
 -
@@ -71,4 +91,22 @@ stdlib.h
 -
 stdio.h
 -
+
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/util/HashTable.c
+stdlib.h
+-
+string.h
+-
+LinkedList.h
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/util/LinkedList.h
+
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/util/LinkedList.c
+stdlib.h
+-
+string.h
+-
+
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/util/LinkedList.h
+Definitions.h
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/util/Definitions.h
 

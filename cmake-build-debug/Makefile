@@ -204,6 +204,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/main.c.s
 .PHONY : main.c.s
 
+symbols/SymbolsTable.o: symbols/SymbolsTable.c.o
+
+.PHONY : symbols/SymbolsTable.o
+
+# target to build an object file
+symbols/SymbolsTable.c.o:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/symbols/SymbolsTable.c.o
+.PHONY : symbols/SymbolsTable.c.o
+
+symbols/SymbolsTable.i: symbols/SymbolsTable.c.i
+
+.PHONY : symbols/SymbolsTable.i
+
+# target to preprocess a source file
+symbols/SymbolsTable.c.i:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/symbols/SymbolsTable.c.i
+.PHONY : symbols/SymbolsTable.c.i
+
+symbols/SymbolsTable.s: symbols/SymbolsTable.c.s
+
+.PHONY : symbols/SymbolsTable.s
+
+# target to generate assembly for a file
+symbols/SymbolsTable.c.s:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/symbols/SymbolsTable.c.s
+.PHONY : symbols/SymbolsTable.c.s
+
 syntactic/SyntacticDefinitions.tab.o: syntactic/SyntacticDefinitions.tab.c.o
 
 .PHONY : syntactic/SyntacticDefinitions.tab.o
@@ -231,6 +258,60 @@ syntactic/SyntacticDefinitions.tab.c.s:
 	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.s
 .PHONY : syntactic/SyntacticDefinitions.tab.c.s
 
+util/HashTable.o: util/HashTable.c.o
+
+.PHONY : util/HashTable.o
+
+# target to build an object file
+util/HashTable.c.o:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/util/HashTable.c.o
+.PHONY : util/HashTable.c.o
+
+util/HashTable.i: util/HashTable.c.i
+
+.PHONY : util/HashTable.i
+
+# target to preprocess a source file
+util/HashTable.c.i:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/util/HashTable.c.i
+.PHONY : util/HashTable.c.i
+
+util/HashTable.s: util/HashTable.c.s
+
+.PHONY : util/HashTable.s
+
+# target to generate assembly for a file
+util/HashTable.c.s:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/util/HashTable.c.s
+.PHONY : util/HashTable.c.s
+
+util/LinkedList.o: util/LinkedList.c.o
+
+.PHONY : util/LinkedList.o
+
+# target to build an object file
+util/LinkedList.c.o:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/util/LinkedList.c.o
+.PHONY : util/LinkedList.c.o
+
+util/LinkedList.i: util/LinkedList.c.i
+
+.PHONY : util/LinkedList.i
+
+# target to preprocess a source file
+util/LinkedList.c.i:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/util/LinkedList.c.i
+.PHONY : util/LinkedList.c.i
+
+util/LinkedList.s: util/LinkedList.c.s
+
+.PHONY : util/LinkedList.s
+
+# target to generate assembly for a file
+util/LinkedList.c.s:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/util/LinkedList.c.s
+.PHONY : util/LinkedList.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -249,9 +330,18 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... symbols/SymbolsTable.o"
+	@echo "... symbols/SymbolsTable.i"
+	@echo "... symbols/SymbolsTable.s"
 	@echo "... syntactic/SyntacticDefinitions.tab.o"
 	@echo "... syntactic/SyntacticDefinitions.tab.i"
 	@echo "... syntactic/SyntacticDefinitions.tab.s"
+	@echo "... util/HashTable.o"
+	@echo "... util/HashTable.i"
+	@echo "... util/HashTable.s"
+	@echo "... util/LinkedList.o"
+	@echo "... util/LinkedList.i"
+	@echo "... util/LinkedList.s"
 .PHONY : help
 
 
