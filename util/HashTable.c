@@ -33,7 +33,7 @@ void createHashTable(HashTable* hashTable, int initialCapacity) {
  * @param key La clave
  * @return El valor asociado a la clave
  */
-SymbolsTableValue* findHash(HashTable* hashTable, char* key) {
+SymbolsTableValue findHash(HashTable* hashTable, char* key) {
     unsigned long hash = calculateHash(key) % (*hashTable)->capacity;
 
     LinkedList possibilities = (*hashTable)->elements[hash];
@@ -60,18 +60,25 @@ SymbolsTableValue* findHash(HashTable* hashTable, char* key) {
  * @param value El valor
  */
 void insertHash(HashTable* hashTable, char* key, SymbolsTableValue* value) {
-    unsigned long hash = calculateHash(key) % (*hashTable)->capacity;
+    unsigned long hash = 0;
+    SymbolsTableValue presentValue = findHash(hashTable, key);
 
-    LinkedList targetList = (*hashTable)->elements[hash];
-    ListItem newItem;
+    if (presentValue == NULL) {
+        hash = calculateHash(key) % (*hashTable)->capacity;
 
-    if(targetList == NULL) {
-        createList(&targetList);
-        (*hashTable)->elements[hash] = targetList;
+        LinkedList targetList = (*hashTable)->elements[hash];
+        ListItem newItem;
+
+        if(targetList == NULL) {
+            createList(&targetList);
+            (*hashTable)->elements[hash] = targetList;
+        }
+
+        createItem(&newItem, key, value);
+        append(&targetList, newItem);
+    } else {
+        modifySymbolsTableValue(&presentValue, value);
     }
-
-    createItem(&newItem, key, value);
-    append(&targetList, newItem);
 }
 
 /**

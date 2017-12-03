@@ -1,4 +1,5 @@
+#include <stdio.h>
 
-void yyerror(char *string) {
-
+void yyerror(void* symbolsTable, char *string) {
+    printf("%s\n", string);
 }

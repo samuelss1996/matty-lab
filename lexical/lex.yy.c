@@ -499,12 +499,13 @@ int yy_flex_debug = 0;
 char *yytext;
 #line 1 "LexicalDefinitions.l"
 #line 2 "LexicalDefinitions.l"
+#include <string.h>
 #include "SyntacticDefinitions.tab.h"
 
 int charCount(char* string, char character);
 
 int column = 0;
-#line 508 "lex.yy.c"
+#line 509 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -722,10 +723,10 @@ YY_DECL
 		}
 
 	{
-#line 27 "LexicalDefinitions.l"
+#line 24 "LexicalDefinitions.l"
 
 
-#line 729 "lex.yy.c"
+#line 730 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -784,90 +785,90 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 29 "LexicalDefinitions.l"
-{column += yyleng; return TOKEN_IDENTIFIER;}
+#line 26 "LexicalDefinitions.l"
+{column += yyleng; yylval.identifier = (char*) malloc((yyleng + 1) * sizeof(char)); strcpy(yylval.identifier, yytext); return TOKEN_IDENTIFIER;}
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 30 "LexicalDefinitions.l"
+#line 27 "LexicalDefinitions.l"
 {column = 0; yylineno++; return '\n';}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 31 "LexicalDefinitions.l"
+#line 28 "LexicalDefinitions.l"
 {column += yyleng;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 33 "LexicalDefinitions.l"
+#line 30 "LexicalDefinitions.l"
 {column += yyleng; yylval.value = atof(yytext); return TOKEN_INTEGER_LITERAL;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 34 "LexicalDefinitions.l"
+#line 31 "LexicalDefinitions.l"
 {column += yyleng; yylval.value = atof(yytext); return TOKEN_FLOATING_POINT_LITERAL;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 36 "LexicalDefinitions.l"
+#line 33 "LexicalDefinitions.l"
 {column += yyleng; return '+';}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 37 "LexicalDefinitions.l"
+#line 34 "LexicalDefinitions.l"
 {column += yyleng; return '-';}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 38 "LexicalDefinitions.l"
+#line 35 "LexicalDefinitions.l"
 {column += yyleng; return '*';}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 39 "LexicalDefinitions.l"
+#line 36 "LexicalDefinitions.l"
 {column += yyleng; return '/';}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 40 "LexicalDefinitions.l"
+#line 37 "LexicalDefinitions.l"
 {column += yyleng; return '^';}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 41 "LexicalDefinitions.l"
+#line 38 "LexicalDefinitions.l"
 {column += yyleng; return '=';}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 42 "LexicalDefinitions.l"
+#line 39 "LexicalDefinitions.l"
 {column += yyleng; return ',';}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 43 "LexicalDefinitions.l"
+#line 40 "LexicalDefinitions.l"
 {column += yyleng; return ';';}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 44 "LexicalDefinitions.l"
+#line 41 "LexicalDefinitions.l"
 {column += yyleng; return '(';}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 45 "LexicalDefinitions.l"
+#line 42 "LexicalDefinitions.l"
 {column += yyleng; return ')';}
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 47 "LexicalDefinitions.l"
+#line 44 "LexicalDefinitions.l"
 {column += yyleng; return EOF;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 49 "LexicalDefinitions.l"
+#line 46 "LexicalDefinitions.l"
 ECHO;
 	YY_BREAK
-#line 871 "lex.yy.c"
+#line 872 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1866,7 +1867,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 49 "LexicalDefinitions.l"
+#line 46 "LexicalDefinitions.l"
 
 
 

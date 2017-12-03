@@ -57,11 +57,12 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 7 "SyntacticDefinitions.y" /* yacc.c:1909  */
+#line 10 "SyntacticDefinitions.y" /* yacc.c:1909  */
 
     double value;
+    char *identifier;
 
-#line 65 "SyntacticDefinitions.tab.h" /* yacc.c:1909  */
+#line 66 "SyntacticDefinitions.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -72,6 +73,6 @@ typedef union YYSTYPE YYSTYPE;
 
 extern YYSTYPE yylval;
 
-int yyparse (void);
+int yyparse (void* symbolsTable);
 
 #endif /* !YY_YY_SYNTACTICDEFINITIONS_TAB_H_INCLUDED  */

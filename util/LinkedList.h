@@ -11,6 +11,10 @@ ListNode nextNode(ListNode baseNode);
 ListItem nodeItem(ListNode node);
 void createItem(ListItem* item, char* key, SymbolsTableValue* value);
 char* itemKey(ListItem item);
-SymbolsTableValue* itemValue(ListItem item);
+SymbolsTableValue itemValue(ListItem item);
 void append(LinkedList* list, ListItem item);
 void destroyList(LinkedList* list);
+
+void createVariable(SymbolsTableValue* symbolsTableValue, double value);
+double getSymbolsTableValueAsNumber(SymbolsTableValue* symbolsTableValue);
+void modifySymbolsTableValue(SymbolsTableValue* target, SymbolsTableValue* source);

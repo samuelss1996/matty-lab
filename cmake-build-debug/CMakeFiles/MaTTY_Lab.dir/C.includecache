@@ -8,6 +8,10 @@
 
 ..//Definitions.h
 
+..//util/LinkedList.h
+Definitions.h
+../util/Definitions.h
+
 ../errors/Errors.h
 
 ../lexical/lex.yy.h
@@ -24,6 +28,12 @@ inttypes.h
 unistd.h
 -
 
+../symbols/SymbolsTable.h
+Definitions.h
+-
+util/LinkedList.h
+-
+
 ../syntactic/SyntacticDefinitions.tab.h
 
 ../util/HashTable.h
@@ -37,6 +47,8 @@ Definitions.h
 ../util/Definitions.h
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/errors/Errors.c
+stdio.h
+-
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical/lex.yy.c
 stdio.h
@@ -49,17 +61,21 @@ stdlib.h
 -
 inttypes.h
 -
+string.h
+-
 SyntacticDefinitions.tab.h
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical/SyntacticDefinitions.tab.h
 unistd.h
 -
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/main.c
-stdio.h
+SyntacticDefinitions.tab.h
+-
+SymbolsTable.h
 -
 stdlib.h
 -
-SyntacticDefinitions.tab.h
+stdio.h
 -
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/symbols/SymbolsTable.c
@@ -77,6 +93,8 @@ lex.yy.h
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/lex.yy.h
 Errors.h
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/Errors.h
+SymbolsTable.h
+/mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/SymbolsTable.h
 stddef.h
 -
 libintl.h
@@ -104,6 +122,8 @@ LinkedList.h
 stdlib.h
 -
 string.h
+-
+Definitions.h
 -
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/util/LinkedList.h

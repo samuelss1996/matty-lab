@@ -1,4 +1,5 @@
 %{
+#include <string.h>
 #include "SyntacticDefinitions.tab.h"
 
 int charCount(char* string, char character);
@@ -9,10 +10,6 @@ int column = 0;
 IdLetter				[a-zA-Z_]
 Blank					[ \t\r]
 NewLine					\n
-
-SingleLineCommentStart	\/\/
-MultiLineCommentStart 	\/\*
-MultiLineCommentEnd		\*\/
 
 HexDigit				[0-9a-fA-F]
 
@@ -26,7 +23,7 @@ FloatLit				({Decimals}\.{Decimals}?{Exponent}?)|({Decimals}{Exponent})|(\.{Deci
 
 %%
 
-{IdLetter}({IdLetter}|[0-9])*							{column += yyleng; return TOKEN_IDENTIFIER;}
+{IdLetter}({IdLetter}|[0-9])*							{column += yyleng; yylval.identifier = (char*) malloc((yyleng + 1) * sizeof(char)); strcpy(yylval.identifier, yytext); return TOKEN_IDENTIFIER;}
 {NewLine} 												{column = 0; yylineno++; return '\n';}
 {Blank}+												{column += yyleng;}
 

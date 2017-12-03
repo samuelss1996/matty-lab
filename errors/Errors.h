@@ -1,1 +1,1 @@
-void yyerror(char *string);
+void yyerror(void* symbolsTable, char *string);

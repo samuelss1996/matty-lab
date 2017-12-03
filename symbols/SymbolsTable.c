@@ -34,7 +34,7 @@ void addSymbol(SymbolsTable* symbolsTable, char *token, SymbolsTableValue* value
  * @param token La cadena de texto del símbolo a consultar
  * @return El identificador del śimbolo
  */
-SymbolsTableValue* findSymbol(SymbolsTable* symbolsTable, char *token) {
+SymbolsTableValue findSymbol(SymbolsTable* symbolsTable, char *token) {
     return findHash(&(*symbolsTable)->hashTable, token);
 }
 
@@ -45,8 +45,8 @@ SymbolsTableValue* findSymbol(SymbolsTable* symbolsTable, char *token) {
  * @param id El identificador del símbolo. En caso de que no exista se insertará con este id
  * @return El identificador del símbolo (el que ya estaba o el que se ha pasado)
  */
-SymbolsTableValue* findOrAdd(SymbolsTable* symbolsTable, char* token, SymbolsTableValue* value) {
-    SymbolsTableValue* result = findSymbol(symbolsTable, token);
+SymbolsTableValue findOrAdd(SymbolsTable* symbolsTable, char* token, SymbolsTableValue* value) {
+    SymbolsTableValue result = findSymbol(symbolsTable, token);
 
     if(result == NULL) {
         result = value;
@@ -54,6 +54,13 @@ SymbolsTableValue* findOrAdd(SymbolsTable* symbolsTable, char* token, SymbolsTab
     }
 
     return result;
+}
+
+void assignVariable(SymbolsTable* symbolsTable, char* variableName, double value) {
+    SymbolsTableValue* tableValue = malloc(sizeof(SymbolsTableValue));
+
+    createVariable(tableValue, value);
+    addSymbol(symbolsTable, variableName, tableValue);
 }
 
 /**

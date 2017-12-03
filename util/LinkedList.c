@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include <Definitions.h>
 
 typedef struct {
     int type;
@@ -7,7 +8,9 @@ typedef struct {
         double numericValue;
         double (*functionPointer)();
     } value;
-} SymbolsTableValue;
+} SymbolsTableValueStruct;
+
+typedef SymbolsTableValueStruct* SymbolsTableValue;
 
 typedef struct {
     char* key;
@@ -107,8 +110,8 @@ char* itemKey(ListItem item){
  * @param item El item
  * @return El valor
  */
-SymbolsTableValue* itemValue(ListItem item){
-    return item->value;
+SymbolsTableValue itemValue(ListItem item){
+    return *item->value;
 }
 
 /**
@@ -148,4 +151,20 @@ void destroyList(LinkedList* list){
 
     (*list)->first = (*list)->last = NULL;
     free(*list);
+}
+
+void createVariable(SymbolsTableValue* symbolsTableValue, double value) {
+    *symbolsTableValue = (SymbolsTableValue) malloc(sizeof(SymbolsTableValueStruct));
+
+    (*symbolsTableValue)->type = SYMBOL_TYPE_VARIABLE;
+    (*symbolsTableValue)->value.numericValue = value;
+}
+
+double getSymbolsTableValueAsNumber(SymbolsTableValue* symbolsTableValue) {
+    return (*symbolsTableValue)->value.numericValue;
+}
+
+void modifySymbolsTableValue(SymbolsTableValue* target, SymbolsTableValue* source) {
+    (*target)->type = (*source)->type;
+    (*target)->value = (*source)->value;
 }
