@@ -75,16 +75,16 @@ SymbolsTable.h
 -
 stdlib.h
 -
-stdio.h
--
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/symbols/SymbolsTable.c
+stdlib.h
+-
+math.h
+-
 Definitions.h
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/symbols/Definitions.h
 HashTable.h
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/symbols/HashTable.h
-stdlib.h
--
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/syntactic/SyntacticDefinitions.tab.c
 math.h

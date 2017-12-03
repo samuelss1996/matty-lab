@@ -16,5 +16,8 @@ void append(LinkedList* list, ListItem item);
 void destroyList(LinkedList* list);
 
 void createVariable(SymbolsTableValue* symbolsTableValue, double value);
+int getSymbolType(SymbolsTableValue* symbol);
 double getSymbolsTableValueAsNumber(SymbolsTableValue* symbolsTableValue);
+void createFunction(SymbolsTableValue* symbol, double (*functionPointer)(double));
+double callSymbolFunction(SymbolsTableValue* symbol, double argument);
 void modifySymbolsTableValue(SymbolsTableValue* target, SymbolsTableValue* source);

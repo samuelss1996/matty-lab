@@ -1,8 +1,9 @@
 #include <SyntacticDefinitions.tab.h>
 #include <SymbolsTable.h>
 #include <stdlib.h>
-#include <stdio.h>
 
+// TODO include command to print the memory status
+// TODO check scientific notation
 int main() {
     SymbolsTable symbolsTable;
 
