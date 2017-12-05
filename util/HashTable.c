@@ -76,6 +76,8 @@ void insertHash(HashTable* hashTable, char* key, SymbolsTableValue* value) {
 
         createItem(&newItem, key, value);
         append(&targetList, newItem);
+
+        (*hashTable)->elementsCount++;
     } else {
         modifySymbolsTableValue(&presentValue, value);
     }
@@ -116,6 +118,11 @@ char** getAllKeys(HashTable* hashTable) {
             }
         }
     }
+
+    realloc(result, j * sizeof(char*));
+    result[j - 1] = NULL;
+
+    return result;
 }
 
 /**

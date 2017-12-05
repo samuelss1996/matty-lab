@@ -46,8 +46,6 @@ statement:        expression ';'
 ;
 
 expression:       TOKEN_INTEGER_LITERAL                 { $$ = $1; }
-                | TOKEN_IDENTIFIER                      { if(existsVariable(symbolsTable, $1)) { $$ = getVariableValue(symbolsTable, $1); } else { free($1); YYERROR; } }
-                | TOKEN_IDENTIFIER '=' expression       { $$ = $3; assignVariable(symbolsTable, $1, $3); }
                 | expression '+' expression             { $$ = $1 + $3; }
                 | expression '-' expression             { $$ = $1 - $3; }
                 | expression '*' expression             { $$ = $1 * $3; }
@@ -55,6 +53,19 @@ expression:       TOKEN_INTEGER_LITERAL                 { $$ = $1; }
                 | '-' expression %prec NEGATIVE         { $$ = -$2; }
                 | expression '^' expression             { $$ = pow($1, $3); }
                 | '(' expression ')'                    { $$ = $2; }
+                | TOKEN_IDENTIFIER                      {
+                                                            int readability = getReadability(symbolsTable, $1);
+
+                                                            if (readability == READABILITY_VARIABLE || readability == READABILITY_CONSTANT) {
+                                                                $$ = getVariableValue(symbolsTable, $1);
+                                                                free($1);
+                                                            } else {
+                                                                errorDisplayingSymbolValue(readability, $1);
+                                                                free($1);
+                                                                YYERROR;
+                                                            }
+                                                        }
+                | TOKEN_IDENTIFIER '=' expression       { $$ = $3; assignVariable(symbolsTable, $1, $3); }
                 | TOKEN_IDENTIFIER arguments            {
                                                             int callability = getCallability(symbolsTable, $1, $2.argCount);
 

@@ -1,5 +1,3 @@
-#include "Definitions.h"
-
 typedef void* LinkedList;
 typedef void* ListNode;
 typedef void* ListItem;

@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <SyntacticDefinitions.tab.h>
 #include <SymbolsTable.h>
+#include <keywords/NativeFunctions.h>
+#include <errors/Errors.h>
 
 void printWelcome();
 
@@ -17,7 +19,6 @@ void printWelcome();
 // TODO prohibit redefinition of constants and functions
 // TODO maybe add more operators
 // TODO handle arithmetic exceptions
-// TODO create delegates to all functions in order to fix the variable arguments problem
 // TODO add 'random' function for the lolz
 // TODO create 'prompt' function, which should perform a fflush
 // TODO why symbols table is void* in bison file
@@ -25,16 +26,14 @@ int main() {
     SymbolsTable symbolsTable;
 
     createSymbolsTable(&symbolsTable);
+    setSymbolsTable(&symbolsTable);
+
     printWelcome();
     printf("> ");
 
     yyparse(&symbolsTable);
 
     return EXIT_SUCCESS;
-}
-
-void handleFunctionCall() {
-
 }
 
 void printWelcome() {

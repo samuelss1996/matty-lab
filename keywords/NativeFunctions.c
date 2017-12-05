@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
-#include "Definitions.h"
+#include <SymbolsTable.h>
+
+SymbolsTable* symbolsTable;
 
 double _sin(double *arguments) {
     return sin(arguments[0]);
@@ -32,8 +34,23 @@ double _help(double *arguments) {
 
     fread(helpContent, 1, 2048, helpFile);
     printf("%s", helpContent);
+
+    return 0;
 }
 
 double _who(double *arguments) {
+    char** symbols = getAllSymbols(symbolsTable);
+    int i;
 
+    for(i = 0; symbols[i] != NULL; i++) {
+        if(getReadability(symbolsTable, symbols[i]) == READABILITY_VARIABLE) {
+            printf("%s = %f\n", symbols[i], getVariableValue(symbolsTable, symbols[i]));
+        }
+    }
+
+    return 0;
+}
+
+void setSymbolsTable(SymbolsTable* _symbolsTable) {
+    symbolsTable = _symbolsTable;
 }

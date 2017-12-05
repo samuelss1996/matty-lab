@@ -2,6 +2,6 @@ Bienvenido a MaTTY Lab!
 
 Puedes escribir cualquier operación matemática a continuación. El resultado de toda expresión que no termine en ';' será impreso por pantalla.
 Para ejecutar código desde un archivo puedes escribir 'load {nombre_del_archivo}'
-Para visualizar todas las variables presentes en el espacio de trabajo puedes escribir 'who'
-Para obtener más detalles puedes escribir 'help'
+Para visualizar todas las variables presentes en el espacio de trabajo puedes escribir 'who()'
+Para obtener más detalles puedes escribir 'help()'
 

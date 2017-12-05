@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <NativeFunctions.h>
+#include <Definitions.h>
 
 #include "HashTable.h"
 
@@ -16,7 +17,7 @@ typedef struct {
 typedef SymbolsTableStruct* SymbolsTable;
 
 void addNativeFunctions(SymbolsTable* symbolsTable);
-NativeFunction nativeFunctions[] = {"sin", 1, _sin, "cos", 1, _cos, "atan", 1, _atan, "log", 1, _log, "exp", 1, _exp, "sqrt", 1, _sqrt, "help", 0, _help, 0, 0};
+NativeFunction nativeFunctions[] = {"sin", 1, _sin, "cos", 1, _cos, "atan", 1, _atan, "log", 1, _log, "exp", 1, _exp, "sqrt", 1, _sqrt, "help", 0, _help, "who", 0, _who, 0, 0, 0};
 
 
 /**
@@ -75,16 +76,25 @@ void assignVariable(SymbolsTable* symbolsTable, char* variableName, double value
     addSymbol(symbolsTable, variableName, tableValue);
 }
 
-int existsVariable(SymbolsTable* symbolsTable, char *name) {
-    SymbolsTableValue symbol = findSymbol(symbolsTable, name);
-
-    return symbol != NULL && getSymbolType(&symbol) == SYMBOL_TYPE_VARIABLE;
-}
-
 double getVariableValue(SymbolsTable* symbolsTable, char* variableName) {
     SymbolsTableValue symbol = findSymbol(symbolsTable, variableName);
 
     return getSymbolsTableValueAsNumber(&symbol);
+}
+
+int getReadability(SymbolsTable* symbolsTable, char *name) {
+    SymbolsTableValue symbol = findSymbol(symbolsTable, name);
+    int symbolType;
+
+    if(symbol == NULL) {
+        return READABILITY_SYMBOL_NOT_FOUND;
+    } else if((symbolType = getSymbolType(&symbol)) == SYMBOL_TYPE_FUNCTION) {
+        return READABILITY_SYMBOL_FUNCTION;
+    } else if(symbolType == SYMBOL_TYPE_CONSTANT) {
+        return READABILITY_CONSTANT;
+    }
+
+    return READABILITY_VARIABLE;
 }
 
 int getCallability(SymbolsTable* symbolsTable, char *functionName, int suppliedArgsCount) {
@@ -108,7 +118,7 @@ double callFunction(SymbolsTable* symbolsTable, char* functionName, double *argu
 }
 
 char** getAllSymbols(SymbolsTable* symbolsTable) {
-    return getAllKeys((*symbolsTable)->hashTable);
+    return getAllKeys(&(*symbolsTable)->hashTable);
 }
 
 /**
