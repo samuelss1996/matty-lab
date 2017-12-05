@@ -98,6 +98,26 @@ void destroyHashTable(HashTable* hashTable) {
     free(*hashTable);
 }
 
+char** getAllKeys(HashTable* hashTable) {
+    ListNode currentNode;
+    char** result = malloc(sizeof(char*));
+    int i, j = 1;
+
+    for(i = 0; i < (*hashTable)->capacity; i++) {
+        if((*hashTable)->elements[i] != NULL) {
+            currentNode = firstNode((*hashTable)->elements + i);
+
+            while(currentNode != NULL) {
+                realloc(result, j * sizeof(char*));
+                result[j - 1] = itemKey(nodeItem(currentNode));
+
+                currentNode = nextNode(currentNode);
+                j++;
+            }
+        }
+    }
+}
+
 /**
  * Función de hash. Devuelve un entero dada una clave
  * @param key La clave

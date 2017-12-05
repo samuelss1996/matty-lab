@@ -150,6 +150,33 @@ errors/Errors.c.s:
 	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.s
 .PHONY : errors/Errors.c.s
 
+keywords/NativeFunctions.o: keywords/NativeFunctions.c.o
+
+.PHONY : keywords/NativeFunctions.o
+
+# target to build an object file
+keywords/NativeFunctions.c.o:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/keywords/NativeFunctions.c.o
+.PHONY : keywords/NativeFunctions.c.o
+
+keywords/NativeFunctions.i: keywords/NativeFunctions.c.i
+
+.PHONY : keywords/NativeFunctions.i
+
+# target to preprocess a source file
+keywords/NativeFunctions.c.i:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/keywords/NativeFunctions.c.i
+.PHONY : keywords/NativeFunctions.c.i
+
+keywords/NativeFunctions.s: keywords/NativeFunctions.c.s
+
+.PHONY : keywords/NativeFunctions.s
+
+# target to generate assembly for a file
+keywords/NativeFunctions.c.s:
+	$(MAKE) -f CMakeFiles/MaTTY_Lab.dir/build.make CMakeFiles/MaTTY_Lab.dir/keywords/NativeFunctions.c.s
+.PHONY : keywords/NativeFunctions.c.s
+
 lexical/lex.yy.o: lexical/lex.yy.c.o
 
 .PHONY : lexical/lex.yy.o
@@ -324,6 +351,9 @@ help:
 	@echo "... errors/Errors.o"
 	@echo "... errors/Errors.i"
 	@echo "... errors/Errors.s"
+	@echo "... keywords/NativeFunctions.o"
+	@echo "... keywords/NativeFunctions.i"
+	@echo "... keywords/NativeFunctions.s"
 	@echo "... lexical/lex.yy.o"
 	@echo "... lexical/lex.yy.i"
 	@echo "... lexical/lex.yy.s"

@@ -1,12 +1,12 @@
 #include <stdlib.h>
-#include <math.h>
+#include <NativeFunctions.h>
 
-#include "Definitions.h"
 #include "HashTable.h"
 
 typedef struct {
     char *functionName;
-    double (*functionPointer)(double);
+    int argCount;
+    double (*functionPointer)(double*);
 } NativeFunction;
 
 typedef struct {
@@ -16,7 +16,7 @@ typedef struct {
 typedef SymbolsTableStruct* SymbolsTable;
 
 void addNativeFunctions(SymbolsTable* symbolsTable);
-NativeFunction nativeFunctions[] = {"sin", sin, "cos", cos, "atan", atan, "log", log, "exp", exp, "sqrt", sqrt, 0, 0};
+NativeFunction nativeFunctions[] = {"sin", 1, _sin, "cos", 1, _cos, "atan", 1, _atan, "log", 1, _log, "exp", 1, _exp, "sqrt", 1, _sqrt, "help", 0, _help, 0, 0};
 
 
 /**
@@ -87,28 +87,28 @@ double getVariableValue(SymbolsTable* symbolsTable, char* variableName) {
     return getSymbolsTableValueAsNumber(&symbol);
 }
 
-int existsFunction(SymbolsTable* symbolsTable, char *functionName) {
+int getCallability(SymbolsTable* symbolsTable, char *functionName, int suppliedArgsCount) {
     SymbolsTableValue symbol = findSymbol(symbolsTable, functionName);
 
-    return symbol != NULL && getSymbolType(&symbol) == SYMBOL_TYPE_FUNCTION;
+    if(symbol == NULL) {
+        return CALLABILITY_SYMBOL_NOT_FOUND;
+    } else if(getSymbolType(&symbol) != SYMBOL_TYPE_FUNCTION) {
+        return CALLABILITY_SYMBOL_NOT_FUNCTION;
+    } else if(getFunctionArgumentCount(&symbol) != suppliedArgsCount) {
+        return CALLABILITY_ARGUMENT_COUNT_MISMATCH;
+    }
+
+    return CALLABILITY_CALLABLE;
 }
 
-double callFunction(SymbolsTable* symbolsTable, char* functionName, double argument) {
+double callFunction(SymbolsTable* symbolsTable, char* functionName, double *arguments) {
     SymbolsTableValue function = findSymbol(symbolsTable, functionName);
     
-    return callSymbolFunction(&function, argument);
+    return callSymbolFunction(&function, arguments);
 }
 
-void addNativeFunctions(SymbolsTable* symbolsTable) {
-    SymbolsTableValue* symbol;
-    int i;
-
-    for(i = 0; nativeFunctions[i].functionName != 0; i++) {
-        symbol = malloc(sizeof(SymbolsTableValue));
-        createFunction(symbol, nativeFunctions[i].functionPointer);
-
-        addSymbol(symbolsTable, nativeFunctions[i].functionName, symbol);
-    }
+char** getAllSymbols(SymbolsTable* symbolsTable) {
+    return getAllKeys((*symbolsTable)->hashTable);
 }
 
 /**
@@ -118,4 +118,16 @@ void addNativeFunctions(SymbolsTable* symbolsTable) {
 void destroySymbolsTable(SymbolsTable* symbolsTable) {
     destroyHashTable(&(*symbolsTable)->hashTable);
     free(*symbolsTable);
+}
+
+void addNativeFunctions(SymbolsTable* symbolsTable) {
+    SymbolsTableValue* symbol;
+    int i;
+
+    for(i = 0; nativeFunctions[i].functionName != 0; i++) {
+        symbol = malloc(sizeof(SymbolsTableValue));
+        createFunction(symbol, nativeFunctions[i].functionPointer, nativeFunctions[i].argCount);
+
+        addSymbol(symbolsTable, nativeFunctions[i].functionName, symbol);
+    }
 }

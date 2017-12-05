@@ -48,7 +48,8 @@ extern int yydebug;
     TOKEN_IDENTIFIER = 258,
     TOKEN_INTEGER_LITERAL = 259,
     TOKEN_FLOATING_POINT_LITERAL = 260,
-    NEGATIVE = 261
+    KEYWORD = 261,
+    NEGATIVE = 262
   };
 #endif
 
@@ -61,8 +62,12 @@ union YYSTYPE
 
     double value;
     char *identifier;
+    struct {
+        int argCount;
+        double argValues[9];
+    } arguments;
 
-#line 66 "SyntacticDefinitions.tab.h" /* yacc.c:1909  */
+#line 71 "SyntacticDefinitions.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

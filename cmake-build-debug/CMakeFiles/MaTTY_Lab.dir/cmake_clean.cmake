@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/MaTTY_Lab.dir/symbols/SymbolsTable.c.o"
   "CMakeFiles/MaTTY_Lab.dir/util/HashTable.c.o"
   "CMakeFiles/MaTTY_Lab.dir/util/LinkedList.c.o"
+  "CMakeFiles/MaTTY_Lab.dir/keywords/NativeFunctions.c.o"
   "MaTTY_Lab.pdb"
   "MaTTY_Lab"
 )

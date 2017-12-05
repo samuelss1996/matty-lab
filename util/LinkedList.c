@@ -6,7 +6,10 @@ typedef struct {
     int type;
     union {
         double numericValue;
-        double (*functionPointer)(double);
+        struct {
+            double (*functionPointer)(double*);
+            int argCount;
+        } function;
     } value;
 } SymbolsTableValueStruct;
 
@@ -168,15 +171,20 @@ double getSymbolsTableValueAsNumber(SymbolsTableValue* symbolsTableValue) {
     return (*symbolsTableValue)->value.numericValue;
 }
 
-void createFunction(SymbolsTableValue* symbol, double (*functionPointer)(double)) {
+void createFunction(SymbolsTableValue* symbol, double (*functionPointer)(double*), int argCount) {
     *symbol = (SymbolsTableValue) malloc(sizeof(SymbolsTableValueStruct));
 
     (*symbol)->type = SYMBOL_TYPE_FUNCTION;
-    (*symbol)->value.functionPointer = functionPointer;
+    (*symbol)->value.function.functionPointer = functionPointer;
+    (*symbol)->value.function.argCount = argCount;
 }
 
-double callSymbolFunction(SymbolsTableValue* symbol, double argument) {
-    return (*(*symbol)->value.functionPointer)(argument);
+int getFunctionArgumentCount(SymbolsTableValue *symbols) {
+    return (*symbols)->value.function.argCount;
+}
+
+double callSymbolFunction(SymbolsTableValue* symbol, double* arguments) {
+    return (*(*symbol)->value.function.functionPointer)(arguments);
 }
 
 void modifySymbolsTableValue(SymbolsTableValue* target, SymbolsTableValue* source) {

@@ -1,5 +1,4 @@
-#include <Definitions.h>
-#include <util/LinkedList.h>
+#include <LinkedList.h>
 
 typedef void* SymbolsTable;
 
@@ -11,6 +10,6 @@ SymbolsTableValue findOrAdd(SymbolsTable* symbolsTable, char* token, SymbolsTabl
 void assignVariable(SymbolsTable* symbolsTable, char* variableName, double value);
 int existsVariable(SymbolsTable* symbolsTable, char *name);
 double getVariableValue(SymbolsTable* symbolsTable, char* variableName);
-int existsFunction(SymbolsTable* symbolsTable, char *functionName);
-double callFunction(SymbolsTable* symbolsTable, char* functionName, double argument);
+int getCallability(SymbolsTable* symbolsTable, char *functionName, int suppliedArgsCount);
+double callFunction(SymbolsTable* symbolsTable, char* functionName, double *arguments);
 void destroySymbolsTable(SymbolsTable* symbolsTable);

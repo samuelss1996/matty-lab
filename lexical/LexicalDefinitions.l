@@ -1,8 +1,10 @@
 %{
 #include <string.h>
+#include "Definitions.h"
 #include "SyntacticDefinitions.tab.h"
 
 int charCount(char* string, char character);
+void saveIdentifier();
 
 int column = 0;
 %}
@@ -23,7 +25,9 @@ FloatLit				({Decimals}\.{Decimals}?{Exponent}?)|({Decimals}{Exponent})|(\.{Deci
 
 %%
 
-{IdLetter}({IdLetter}|[0-9])*							{column += yyleng; yylval.identifier = (char*) malloc((yyleng + 1) * sizeof(char)); strcpy(yylval.identifier, yytext); return TOKEN_IDENTIFIER;}
+"who"|"help"                                            {column += yyleng; saveIdentifier(); return KEYWORD;}
+
+{IdLetter}({IdLetter}|[0-9])*							{column += yyleng; saveIdentifier(); return TOKEN_IDENTIFIER;}
 {NewLine} 												{column = 0; yylineno++; return '\n';}
 {Blank}+												{column += yyleng;}
 
@@ -56,4 +60,9 @@ int charCount(char* string, char character) {
 	}
 
 	return result;
+}
+
+void saveIdentifier() {
+    yylval.identifier = (char*) malloc((yyleng + 1) * sizeof(char));
+    strcpy(yylval.identifier, yytext);
 }
