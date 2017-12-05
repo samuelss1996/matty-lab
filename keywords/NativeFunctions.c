@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <SymbolsTable.h>
+#include <lexical/lex.yy.h>
 
 SymbolsTable* symbolsTable;
 
@@ -49,6 +50,10 @@ double _who(double *arguments) {
     }
 
     return 0;
+}
+
+void _load() {
+    yy_switch_to_buffer(yy_create_buffer(fopen("txt/test.txt", "r"), YY_BUF_SIZE));
 }
 
 void setSymbolsTable(SymbolsTable* _symbolsTable) {

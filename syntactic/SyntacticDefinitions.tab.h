@@ -49,7 +49,9 @@ extern int yydebug;
     TOKEN_INTEGER_LITERAL = 259,
     TOKEN_FLOATING_POINT_LITERAL = 260,
     KEYWORD = 261,
-    NEGATIVE = 262
+    LOAD = 262,
+    END_OF_FILE = 263,
+    NEGATIVE = 264
   };
 #endif
 
@@ -58,7 +60,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 10 "SyntacticDefinitions.y" /* yacc.c:1909  */
+#line 13 "SyntacticDefinitions.y" /* yacc.c:1909  */
 
     double value;
     char *identifier;
@@ -67,7 +69,7 @@ union YYSTYPE
         double argValues[9];
     } arguments;
 
-#line 71 "SyntacticDefinitions.tab.h" /* yacc.c:1909  */
+#line 73 "SyntacticDefinitions.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

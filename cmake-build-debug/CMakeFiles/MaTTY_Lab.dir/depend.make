@@ -4,6 +4,7 @@
 CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o: ../errors/Errors.c
 
 CMakeFiles/MaTTY_Lab.dir/keywords/NativeFunctions.c.o: ../Definitions.h
+CMakeFiles/MaTTY_Lab.dir/keywords/NativeFunctions.c.o: ../lexical/lex.yy.h
 CMakeFiles/MaTTY_Lab.dir/keywords/NativeFunctions.c.o: ../symbols/SymbolsTable.h
 CMakeFiles/MaTTY_Lab.dir/keywords/NativeFunctions.c.o: ../util/LinkedList.h
 CMakeFiles/MaTTY_Lab.dir/keywords/NativeFunctions.c.o: ../keywords/NativeFunctions.c
@@ -28,6 +29,7 @@ CMakeFiles/MaTTY_Lab.dir/symbols/SymbolsTable.c.o: ../symbols/SymbolsTable.c
 
 CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o: ../Definitions.h
 CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o: ../errors/Errors.h
+CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o: ../keywords/NativeFunctions.h
 CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o: ../lexical/lex.yy.h
 CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o: ../symbols/SymbolsTable.h
 CMakeFiles/MaTTY_Lab.dir/syntactic/SyntacticDefinitions.tab.c.o: ../util/LinkedList.h

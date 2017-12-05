@@ -5,6 +5,9 @@
 #include "lex.yy.h"
 #include "Errors.h"
 #include "SymbolsTable.h"
+#include "NativeFunctions.h"
+
+int readingFile = 0;
 %}
 
 %union {
@@ -20,6 +23,8 @@
 %token <value> TOKEN_INTEGER_LITERAL
 %token <value> TOKEN_FLOATING_POINT_LITERAL
 %token <identifier> KEYWORD
+%token <identifier> LOAD
+%token END_OF_FILE;
 
 %type <value> expression
 %type <arguments> arguments
@@ -30,19 +35,25 @@
 %left '*' '/'
 %left NEGATIVE
 %right '^'
+
 %%
+
 input:            /* empty */
-                | input line                            { printf("> "); }
+                | input line                            { if(!readingFile) printf("> "); }
 ;
 
-line:             '\n'
-                | error '\n'
-                | statement '\n'
-                | expression '\n'                       { printf("%f\n", $1); }
+line:             lineEnd
+                | error lineEnd
+                | statement
+                | expression lineEnd                    { printf("%f\n", $1); }
 ;
 
-statement:        expression ';'
-                | KEYWORD '(' ')'                       { callFunction(symbolsTable, $1, NULL); free($1); }
+lineEnd:        '\n'
+                | END_OF_FILE                           { yy_switch_to_buffer(yy_create_buffer(stdin, YY_BUF_SIZE)); readingFile = 0;}
+
+statement:        expression ';' lineEnd
+                | KEYWORD '(' ')' lineEnd               { callFunction(symbolsTable, $1, NULL); free($1); }
+                | LOAD '(' ')' lineEnd                  { readingFile = 1; _load(); free($1); }
 ;
 
 expression:       TOKEN_INTEGER_LITERAL                 { $$ = $1; }

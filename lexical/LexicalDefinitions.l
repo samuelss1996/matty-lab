@@ -26,6 +26,7 @@ FloatLit				({Decimals}\.{Decimals}?{Exponent}?)|({Decimals}{Exponent})|(\.{Deci
 %%
 
 "who"|"help"                                            {column += yyleng; saveIdentifier(); return KEYWORD;}
+"load"                                                  {column += yyleng; saveIdentifier(); return LOAD;}
 
 {IdLetter}({IdLetter}|[0-9])*							{column += yyleng; saveIdentifier(); return TOKEN_IDENTIFIER;}
 {NewLine} 												{column = 0; yylineno++; return '\n';}
@@ -45,7 +46,7 @@ FloatLit				({Decimals}\.{Decimals}?{Exponent}?)|({Decimals}{Exponent})|(\.{Deci
 "("                                                     {column += yyleng; return '(';}
 ")"                                                     {column += yyleng; return ')';}
 
-<<EOF>>													{column += yyleng; return EOF;}
+<<EOF>>													{column += yyleng; return END_OF_FILE;}
 
 %%
 

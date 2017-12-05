@@ -7,12 +7,10 @@
 
 void printWelcome();
 
-// TODO include command to print the memory status
 // TODO check scientific notation
 // TODO check what happens with numbers like "1."
 // TODO improve error management
 // TODO add constants
-// TODO consider native functions with different signatures
 // TODO maybe add data types
 // TODO dynamic argValues array
 // TODO add constants
@@ -22,6 +20,9 @@ void printWelcome();
 // TODO add 'random' function for the lolz
 // TODO create 'prompt' function, which should perform a fflush
 // TODO why symbols table is void* in bison file
+// TODO multiple statements in one line
+// TODO allow ';' after keywords
+// TODO allow multiple ';' together
 int main() {
     SymbolsTable symbolsTable;
 
