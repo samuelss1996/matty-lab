@@ -6,6 +6,6 @@ double _exp(double *arguments);
 double _sqrt(double *arguments);
 double _help(double *arguments);
 double _who(double *arguments);
-void _load();
+int _load(char *filename);
 
 void setSymbolsTable(void* symbolsTable);

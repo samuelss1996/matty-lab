@@ -10,8 +10,6 @@
 
 ..//errors/Errors.h
 
-..//keywords/NativeFunctions.h
-
 ..//lexical/lex.yy.h
 stdio.h
 -
@@ -71,6 +69,8 @@ SymbolsTable.h
 -
 lexical/lex.yy.h
 -
+errors/Errors.h
+-
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical/lex.yy.c
 stdio.h
@@ -101,9 +101,7 @@ SyntacticDefinitions.tab.h
 -
 SymbolsTable.h
 -
-keywords/NativeFunctions.h
--
-errors/Errors.h
+NativeFunctions.h
 -
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/symbols/SymbolsTable.c

@@ -2,18 +2,15 @@
 #include <stdio.h>
 #include <SyntacticDefinitions.tab.h>
 #include <SymbolsTable.h>
-#include <keywords/NativeFunctions.h>
-#include <errors/Errors.h>
+#include <NativeFunctions.h>
 
 void printWelcome();
 
-// TODO check scientific notation
-// TODO check what happens with numbers like "1."
 // TODO improve error management
 // TODO add constants
 // TODO maybe add data types
 // TODO dynamic argValues array
-// TODO add constants
+// TODO add remaining functions
 // TODO prohibit redefinition of constants and functions
 // TODO maybe add more operators
 // TODO handle arithmetic exceptions

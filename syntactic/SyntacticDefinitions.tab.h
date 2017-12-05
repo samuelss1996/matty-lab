@@ -45,13 +45,14 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    TOKEN_IDENTIFIER = 258,
-    TOKEN_INTEGER_LITERAL = 259,
-    TOKEN_FLOATING_POINT_LITERAL = 260,
-    KEYWORD = 261,
-    LOAD = 262,
-    END_OF_FILE = 263,
-    NEGATIVE = 264
+    IDENTIFIER = 258,
+    STRING_LIT = 259,
+    INTEGER_LIT = 260,
+    FLOATING_LIT = 261,
+    KEYWORD = 262,
+    LOAD = 263,
+    END_OF_FILE = 264,
+    NEGATIVE = 265
   };
 #endif
 
@@ -63,13 +64,13 @@ union YYSTYPE
 #line 13 "SyntacticDefinitions.y" /* yacc.c:1909  */
 
     double value;
-    char *identifier;
+    char *string;
     struct {
         int argCount;
         double argValues[9];
     } arguments;
 
-#line 73 "SyntacticDefinitions.tab.h" /* yacc.c:1909  */
+#line 74 "SyntacticDefinitions.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

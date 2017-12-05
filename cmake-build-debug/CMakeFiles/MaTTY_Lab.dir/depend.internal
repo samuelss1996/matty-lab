@@ -5,6 +5,7 @@ CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o
  /mnt/c/Users/Ada/GitHub/MaTTY Lab/errors/Errors.c
 CMakeFiles/MaTTY_Lab.dir/keywords/NativeFunctions.c.o
  ..//Definitions.h
+ ..//errors/Errors.h
  ..//lexical/lex.yy.h
  ../symbols/SymbolsTable.h
  ../util/LinkedList.h
@@ -15,8 +16,7 @@ CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o
  /mnt/c/Users/Ada/GitHub/MaTTY Lab/lexical/lex.yy.c
 CMakeFiles/MaTTY_Lab.dir/main.c.o
  ..//Definitions.h
- ..//errors/Errors.h
- ..//keywords/NativeFunctions.h
+ ../keywords/NativeFunctions.h
  ../symbols/SymbolsTable.h
  ../syntactic/SyntacticDefinitions.tab.h
  ../util/LinkedList.h

@@ -2,6 +2,7 @@
 #include <math.h>
 #include <SymbolsTable.h>
 #include <lexical/lex.yy.h>
+#include <errors/Errors.h>
 
 SymbolsTable* symbolsTable;
 
@@ -52,8 +53,18 @@ double _who(double *arguments) {
     return 0;
 }
 
-void _load() {
-    yy_switch_to_buffer(yy_create_buffer(fopen("txt/test.txt", "r"), YY_BUF_SIZE));
+int _load(char *filename) {
+    FILE* file = fopen(filename, "r");
+
+    if(file != NULL) {
+        yy_switch_to_buffer(yy_create_buffer(fopen(filename, "r"), YY_BUF_SIZE));
+        printf("OK\n");
+
+        return 1;
+    }
+
+    errorLoadingFile(filename);
+    return 0;
 }
 
 void setSymbolsTable(SymbolsTable* _symbolsTable) {
