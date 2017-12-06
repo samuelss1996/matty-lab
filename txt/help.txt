@@ -1,3 +1,12 @@
+==| Ejecucion |==
+    Existen dos posibilidades a la hora de ejecutar MaTTY Lab:
+        - Sin argumentos: Simplemente se entra en la consola interactiva de MaTTY Lab.
+            ./MaTTY_Lab
+
+        - Con un argumento: Se carga y ejecuta el codigo contenido en el fichero pasado como argumento. A
+        continuacion, se entra en la consola interactiva.
+            ./MaTTY_Lab fichero.txt
+
 ==| Numeros |==
     Se pueden introducir numeros en la calculadora, tanto enteros como numeros flotantes en notacion
     cientifica. Algunos ejemplos validos son los siguientes:

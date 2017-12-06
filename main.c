@@ -8,13 +8,13 @@
 
 extern int readingFile;
 
-void printWelcome();
 void parseArguments(int argc, char **argv);
 
+// TODO proper message with wrong arguments
+// TODO include arguments in help
 int main(int argc, char **argv) {
     SymbolsTable symbolsTable;
 
-    printWelcome();
     parseArguments(argc, argv);
 
     createSymbolsTable(&symbolsTable);
@@ -49,12 +49,15 @@ void printWelcome() {
 
 void parseArguments(int argc, char **argv) {
     switch(argc) {
-        case 1: return;
+        case 1:
+            printWelcome();
+            return;
         case 2 :
+            printWelcome();
             readingFile = _load(argv[1]);
             break;
         default:
-            printf("Usos:\n\t%s\n\t%s {archivo a ejecutar}", argv[0], argv[0]);
+            printf("Usos:\n\t%s\n\t%s {archivo a ejecutar}\n", argv[0], argv[0]);
             exit(EXIT_CODE_WRONG_ARGUMENTS);
     }
 }

@@ -1683,7 +1683,3 @@ void ensureStackCapacity(int capacity) {
         stack = realloc(stack, stackSize * sizeof(double));
     }
 }
-
-extern int isReadingFile() {
-
-}
