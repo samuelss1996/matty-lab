@@ -1,0 +1,8 @@
+Bienvenido a MaTTY Lab!
+
+Puedes escribir cualquier operacion matematica a continuacion. El resultado de toda expresion que no termine en ';' sera impreso por pantalla.
+Para ejecutar codigo desde un archivo puedes escribir 'load "{nombre_del_archivo}"'
+Para visualizar todas las variables presentes en el espacio de trabajo puedes escribir 'who'
+Para obtener mas detalles puedes escribir 'help'
+Para salir puedes escribir 'exit'
+

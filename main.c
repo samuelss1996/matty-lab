@@ -34,9 +34,16 @@ int main(int argc, char **argv) {
 
 void printWelcome() {
     FILE *welcomeFile = fopen(WELCOME_MESSAGE_FILE, "rb");
-    char welcomeContent[2048];
+    char welcomeContent[1024];
 
-    fread(welcomeContent, 1, 2048, welcomeFile);
+    if(welcomeFile == NULL) {
+        printf(ANSI_COLOR_ERROR "Advertencia: No se ha encontrado el fichero de bienvenida '%s'. Asegurese de que esta ejecutando "
+                       "la caluladora en el entorno correcto\n\n" ANSI_COLOR_RESET, WELCOME_MESSAGE_FILE);
+
+        return;
+    }
+
+    welcomeContent[fread(welcomeContent, 1, 2048, welcomeFile)] = '\0';
     printf("%s", welcomeContent);
 }
 

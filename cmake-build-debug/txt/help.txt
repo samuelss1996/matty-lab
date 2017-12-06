@@ -70,7 +70,7 @@
         x = 4 + 3; // Asigna a 'x' el valor 7, tras realizar la suma. El valor no se imprime por pantalla
 
 ==| Sentencias especiales |==
-    Ademas de las sentencias mecionadas en el apartado anterior, MaTTY Lab incluye las siguientes sentencias especiales:
+    Ademas de las sentencias mecionadas en el apartado anterior, Matty Lab incluye las siguientes sentencias especiales:
         help: Imprime este mensaje de ayuda
         who: Imprime las variables definidas por el usuario, junto a sus valores
         clear: Elimina todas las variables definidas por el usuario durante la sesion

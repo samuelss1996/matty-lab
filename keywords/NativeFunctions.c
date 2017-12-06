@@ -91,12 +91,22 @@ double _intRandom(double *arguments) {
 }
 
 double _help(double *arguments) {
+    int maxFileSize = 8192;
     FILE* helpFile = fopen(HELP_MESSAGE_FILE, "rb");
-    char helpContent[8192];
+    char *helpContent = malloc(maxFileSize * sizeof(char));
 
-    fread(helpContent, 1, 8192, helpFile);
+    if(helpFile == NULL) {
+        printf(ANSI_COLOR_ERROR "No se puede mostrar la ayuda: No se ha encontrado el fichero de ayuda '%s'. Asegurese de que esta ejecutando "
+                       "la caluladora en el entorno correcto\n\n" ANSI_COLOR_RESET, HELP_MESSAGE_FILE);
+
+        free(helpContent);
+        return 0;
+    }
+
+    helpContent[fread(helpContent, 1, 8192, helpFile)] = '\0';
     printf("%s", helpContent);
 
+    free(helpContent);
     return 0;
 }
 
