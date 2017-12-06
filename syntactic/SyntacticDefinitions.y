@@ -6,6 +6,7 @@
 #include "Errors.h"
 #include "SymbolsTable.h"
 #include "NativeFunctions.h"
+#include "Definitions.h"
 
 int readingFile = 0;
 double *stack = NULL;
@@ -138,4 +139,8 @@ void ensureStackCapacity(int capacity) {
         stackSize += STACK_SIZE_STEP;
         stack = realloc(stack, stackSize * sizeof(double));
     }
+}
+
+extern int isReadingFile() {
+
 }

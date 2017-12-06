@@ -1,5 +1,4 @@
 #include <LinkedList.h>
-#include <Definitions.h>
 
 typedef void* SymbolsTable;
 

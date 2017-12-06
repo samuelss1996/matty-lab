@@ -4,7 +4,6 @@
 CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o: ../Definitions.h
 CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o: ../symbols/SymbolsTable.h
 CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o: ../util/LinkedList.h
-CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o: ../util/LinkedList.h
 CMakeFiles/MaTTY_Lab.dir/errors/Errors.c.o: ../errors/Errors.c
 
 CMakeFiles/MaTTY_Lab.dir/keywords/NativeFunctions.c.o: ../Definitions.h

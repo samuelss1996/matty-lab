@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 #include <SymbolsTable.h>
-#include <lexical/lex.yy.h>
-#include <errors/Errors.h>
+#include <lex.yy.h>
+#include <Errors.h>
+#include <Definitions.h>
 
 SymbolsTable* symbolsTable;
 
@@ -118,7 +119,7 @@ double _clear(double *arguments) {
 }
 
 int _load(char *filename) {
-    FILE* file = fopen(filename, "r");
+    FILE* file = fopen(filename, "r+");
 
     if(file != NULL) {
         yy_switch_to_buffer(yy_create_buffer(fopen(filename, "r"), YY_BUF_SIZE));

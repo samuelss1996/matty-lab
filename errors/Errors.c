@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <LinkedList.h>
+#include <SymbolsTable.h>
 #include <Definitions.h>
-#include <util/LinkedList.h>
-#include <symbols/SymbolsTable.h>
+
 
 void yyerror(void* symbolsTable, const char *string) { }
 
