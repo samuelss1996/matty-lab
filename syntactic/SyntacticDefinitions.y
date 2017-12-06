@@ -56,9 +56,9 @@ line:             lineEnd
 lineEnd:        '\n'
                 | END_OF_FILE                   { yy_switch_to_buffer(yy_create_buffer(stdin, YY_BUF_SIZE)); readingFile = 0;}
 
-statement:        expression ';' lineEnd
-                | KEYWORD lineEnd               { callFunction(symbolsTable, $1, NULL); free($1); }
-                | LOAD STRING_LIT lineEnd       { readingFile = _load($2); free($1); free($2); }
+statement:        expression ';' optSemicolons lineEnd
+                | KEYWORD optSemicolons lineEnd               { callFunction(symbolsTable, $1, NULL); free($1); }
+                | LOAD STRING_LIT optSemicolons lineEnd       { readingFile = _load($2); free($1); free($2); }
 ;
 
 expression:       INTEGER_LIT                   { $$ = $1; }
@@ -119,6 +119,10 @@ arguments:        '(' ')'                       { $$.argCount = 0; }
 
 argumentList:     argumentList ',' expression   { ensureStackCapacity($1.argCount + 1); stack[$1.argCount] = $3; $$.argCount = $1.argCount + 1; }
                 | expression                    { ensureStackCapacity(1); stack[0] = $1; $$.argCount = 1; }
+;
+
+optSemicolons:     /* empty */
+                | optSemicolons ';'
 ;
 
 %%

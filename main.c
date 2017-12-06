@@ -7,14 +7,9 @@
 
 void printWelcome();
 
-// TODO multiple statements in one line
-// TODO allow ';' after keywords
-// TODO allow multiple ';' together
-// TODO maybe include functions like avg(x,y,z...)
 // TODO improve error management
 // TODO why symbols table is void* in bison file
 // TODO maybe supply file as argument
-// TODO maybe add data types
 int main() {
     SymbolsTable symbolsTable;
 
