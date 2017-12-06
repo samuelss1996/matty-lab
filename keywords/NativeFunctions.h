@@ -26,3 +26,4 @@ double _clear(double *arguments);
 int _load(char *filename);
 
 void setSymbolsTable(void* symbolsTable);
+void prompt();

@@ -28,7 +28,7 @@ String                  \"[^\"\n]*\"
 
 %%
 
-"who"|"clear"|"help"x=                                    {column += yyleng; saveIdentifier(); return KEYWORD;}
+"who"|"clear"|"help"                                    {column += yyleng; saveIdentifier(); return KEYWORD;}
 "load"                                                  {column += yyleng; saveIdentifier(); return LOAD;}
 
 {IdLetter}({IdLetter}|[0-9])*							{column += yyleng; saveIdentifier(); return IDENTIFIER;}

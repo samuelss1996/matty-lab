@@ -105,7 +105,7 @@ double _who(double *arguments) {
 
     for(i = 0; symbols[i] != NULL; i++) {
         if(getReadability(symbolsTable, symbols[i]) == READABILITY_VARIABLE) {
-            printf("%s = %f\n", symbols[i], getVariableValue(symbolsTable, symbols[i]));
+            printf("%s = %.10g\n", symbols[i], getVariableValue(symbolsTable, symbols[i]));
         }
     }
 
@@ -133,4 +133,9 @@ int _load(char *filename) {
 
 void setSymbolsTable(SymbolsTable* _symbolsTable) {
     symbolsTable = _symbolsTable;
+}
+
+void prompt() {
+    printf("> ");
+    fflush(stdout);
 }

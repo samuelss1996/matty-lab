@@ -1253,13 +1253,13 @@ yyreduce:
     {
         case 3:
 #line 43 "SyntacticDefinitions.y" /* yacc.c:1646  */
-    { if(!readingFile) printf("> "); }
+    { if(!readingFile) prompt(); }
 #line 1258 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
 #line 49 "SyntacticDefinitions.y" /* yacc.c:1646  */
-    { printf("%f\n", (yyvsp[-1].value)); }
+    { printf("%.10g\n", (yyvsp[-1].value)); }
 #line 1264 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 

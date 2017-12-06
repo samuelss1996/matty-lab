@@ -40,13 +40,13 @@ int readingFile = 0;
 %%
 
 input:            /* empty */
-                | input line                    { if(!readingFile) printf("> "); }
+                | input line                    { if(!readingFile) prompt(); }
 ;
 
 line:             lineEnd
                 | error lineEnd
                 | statement
-                | expression lineEnd            { printf("%f\n", $1); }
+                | expression lineEnd            { printf("%.10g\n", $1); }
 ;
 
 lineEnd:        '\n'
