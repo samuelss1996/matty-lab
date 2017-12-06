@@ -5,13 +5,14 @@
 
 void yyerror(void* symbolsTable, const char *string) { }
 
+
 void syntacticError(int handledError) {
     if(!handledError) {
         printf(ANSI_COLOR_ERROR "Error sintáctico. Puedes escribir 'help' para acceder al manual\n" ANSI_COLOR_RESET);
     }
 }
 
-void errorAssigningValue(int errorCode, char* symbolName) {
+void errorAssigningValue(int errorCode, char *symbolName) {
     printf(ANSI_COLOR_ERROR "Error asignando valor: %s es una ", symbolName);
 
     switch(errorCode) {
@@ -24,6 +25,7 @@ void errorAssigningValue(int errorCode, char* symbolName) {
 void errorCallingFunction(int errorCode, SymbolsTable* symbolsTable,  char* functionName, int suppliedArgsCount) {
     SymbolsTableValue symbol;
     int expectedArgsCount;
+
     printf(ANSI_COLOR_ERROR "Error invocando a %s: ", functionName);
 
     switch(errorCode) {
@@ -40,7 +42,7 @@ void errorCallingFunction(int errorCode, SymbolsTable* symbolsTable,  char* func
 }
 
 void errorDisplayingSymbolValue(int errorCode, char* symbolName) {
-    printf(ANSI_COLOR_ERROR "Error mostrando el valor de %s: ", symbolName);
+    printf(ANSI_COLOR_ERROR "Error accediendo al valor de %s: ", symbolName);
 
     switch(errorCode) {
         case READABILITY_SYMBOL_NOT_FOUND: printf("el símbolo no existe.\n" ANSI_COLOR_RESET); break;

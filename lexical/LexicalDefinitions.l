@@ -78,4 +78,6 @@ void saveIdentifier() {
 void saveString() {
     yylval.string = (char*) malloc((yyleng -1) * sizeof(char));
     memcpy(yylval.string, yytext + 1, (yyleng - 2) * sizeof(char));
+
+    yylval.string[yyleng -1] = '\0';
 }

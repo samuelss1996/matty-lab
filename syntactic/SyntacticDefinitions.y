@@ -1,5 +1,4 @@
 %parse-param {void* symbolsTable}
-%define parse.error verbose
 
 %{
 #include <math.h>

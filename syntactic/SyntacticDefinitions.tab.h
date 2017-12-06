@@ -62,7 +62,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 19 "SyntacticDefinitions.y" /* yacc.c:1909  */
+#line 18 "SyntacticDefinitions.y" /* yacc.c:1909  */
 
     double value;
     char *string;

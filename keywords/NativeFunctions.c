@@ -122,7 +122,7 @@ int _load(char *filename) {
 
     if(file != NULL) {
         yy_switch_to_buffer(yy_create_buffer(fopen(filename, "r"), YY_BUF_SIZE));
-        printf("OK\n");
+        printf("Archivo cargado.\n");
 
         return 1;
     }
