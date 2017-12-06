@@ -8,6 +8,10 @@
 #include "NativeFunctions.h"
 
 int readingFile = 0;
+double *stack = NULL;
+int stackSize = 0;
+
+void ensureStackCapacity(int capacity);
 %}
 
 %union {
@@ -15,7 +19,7 @@ int readingFile = 0;
     char *string;
     struct {
         int argCount;
-        double argValues[9];
+        double *argValues;
     } arguments;
 }
 
@@ -106,11 +110,22 @@ expression:       INTEGER_LIT                   { $$ = $1; }
 ;
 
 arguments:        '(' ')'                       { $$.argCount = 0; }
-                | '(' argumentList ')'          { memcpy($$.argValues, $2.argValues, 9 * sizeof(double)); $$.argCount = $2.argCount; }
+                | '(' argumentList ')'          {
+                                                    $$.argValues = (double*) malloc($2.argCount * sizeof(double));
+                                                    memcpy($$.argValues, stack, $2.argCount * sizeof(double));
+                                                    $$.argCount = $2.argCount;
+                                                }
 ;
 
-argumentList:     argumentList ',' expression   { $$.argValues[$1.argCount] = $3; $$.argCount = $1.argCount + 1; }
-                | expression                    { $$.argValues[0] = $1; $$.argCount = 1; }
+argumentList:     argumentList ',' expression   { ensureStackCapacity($1.argCount + 1); stack[$1.argCount] = $3; $$.argCount = $1.argCount + 1; }
+                | expression                    { ensureStackCapacity(1); stack[0] = $1; $$.argCount = 1; }
 ;
 
 %%
+
+void ensureStackCapacity(int capacity) {
+    if(capacity > stackSize) {
+        stackSize += STACK_SIZE_STEP;
+        stack = realloc(stack, stackSize * sizeof(double));
+    }
+}

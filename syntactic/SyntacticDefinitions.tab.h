@@ -61,13 +61,13 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 13 "SyntacticDefinitions.y" /* yacc.c:1909  */
+#line 17 "SyntacticDefinitions.y" /* yacc.c:1909  */
 
     double value;
     char *string;
     struct {
         int argCount;
-        double argValues[9];
+        double *argValues;
     } arguments;
 
 #line 74 "SyntacticDefinitions.tab.h" /* yacc.c:1909  */

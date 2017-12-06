@@ -116,7 +116,7 @@ char** getAllKeys(HashTable* hashTable) {
             currentNode = firstNode((*hashTable)->elements + i);
 
             while(currentNode != NULL) {
-                realloc(result, j * sizeof(char*));
+                result = realloc(result, j * sizeof(char*));
                 result[j - 1] = itemKey(nodeItem(currentNode));
 
                 currentNode = nextNode(currentNode);
@@ -125,7 +125,7 @@ char** getAllKeys(HashTable* hashTable) {
         }
     }
 
-    realloc(result, j * sizeof(char*));
+    result = realloc(result, j * sizeof(char*));
     result[j - 1] = NULL;
 
     return result;

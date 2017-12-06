@@ -71,8 +71,12 @@
 #include "NativeFunctions.h"
 
 int readingFile = 0;
+double *stack = NULL;
+int stackSize = 0;
 
-#line 76 "SyntacticDefinitions.tab.c" /* yacc.c:339  */
+void ensureStackCapacity(int capacity);
+
+#line 80 "SyntacticDefinitions.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -123,16 +127,16 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 13 "SyntacticDefinitions.y" /* yacc.c:355  */
+#line 17 "SyntacticDefinitions.y" /* yacc.c:355  */
 
     double value;
     char *string;
     struct {
         int argCount;
-        double argValues[9];
+        double *argValues;
     } arguments;
 
-#line 136 "SyntacticDefinitions.tab.c" /* yacc.c:355  */
+#line 140 "SyntacticDefinitions.tab.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -149,7 +153,7 @@ int yyparse (void* symbolsTable);
 
 /* Copy the second part of user declarations.  */
 
-#line 153 "SyntacticDefinitions.tab.c" /* yacc.c:358  */
+#line 157 "SyntacticDefinitions.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -447,9 +451,9 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    42,    42,    43,    46,    47,    48,    49,    52,    53,
-      55,    56,    57,    60,    61,    62,    63,    64,    65,    66,
-      67,    68,    69,    81,    94,   108,   109,   112,   113
+       0,    46,    46,    47,    50,    51,    52,    53,    56,    57,
+      59,    60,    61,    64,    65,    66,    67,    68,    69,    70,
+      71,    72,    73,    85,    98,   112,   113,   120,   121
 };
 #endif
 
@@ -1252,91 +1256,91 @@ yyreduce:
   switch (yyn)
     {
         case 3:
-#line 43 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 47 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { if(!readingFile) prompt(); }
-#line 1258 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1262 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 49 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 53 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { printf("%.10g\n", (yyvsp[-1].value)); }
-#line 1264 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1268 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 53 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 57 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { yy_switch_to_buffer(yy_create_buffer(stdin, YY_BUF_SIZE)); readingFile = 0;}
-#line 1270 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1274 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 56 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 60 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { callFunction(symbolsTable, (yyvsp[-1].string), NULL); free((yyvsp[-1].string)); }
-#line 1276 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1280 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 57 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 61 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { readingFile = _load((yyvsp[-1].string)); free((yyvsp[-2].string)); free((yyvsp[-1].string)); }
-#line 1282 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1286 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 60 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 64 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { (yyval.value) = (yyvsp[0].value); }
-#line 1288 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1292 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 61 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 65 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { (yyval.value) = (yyvsp[0].value); }
-#line 1294 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1298 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 62 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 66 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { (yyval.value) = (yyvsp[-2].value) + (yyvsp[0].value); }
-#line 1300 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1304 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 63 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 67 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { (yyval.value) = (yyvsp[-2].value) - (yyvsp[0].value); }
-#line 1306 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1310 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 64 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 68 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { (yyval.value) = (yyvsp[-2].value) * (yyvsp[0].value); }
-#line 1312 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1316 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 65 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 69 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { (yyval.value) = (yyvsp[-2].value) / (yyvsp[0].value); }
-#line 1318 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1322 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 66 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 70 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { (yyval.value) = -(yyvsp[0].value); }
-#line 1324 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1328 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 67 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 71 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { (yyval.value) = pow((yyvsp[-2].value), (yyvsp[0].value)); }
-#line 1330 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1334 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 68 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 72 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { (yyval.value) = (yyvsp[-1].value); }
-#line 1336 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1340 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 69 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 73 "SyntacticDefinitions.y" /* yacc.c:1646  */
     {
                                                     int readability = getReadability(symbolsTable, (yyvsp[0].string));
 
@@ -1349,11 +1353,11 @@ yyreduce:
                                                         YYERROR;
                                                     }
                                                 }
-#line 1353 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1357 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 81 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 85 "SyntacticDefinitions.y" /* yacc.c:1646  */
     {
                                                     int assignability = getAssignability(symbolsTable, (yyvsp[-2].string));
 
@@ -1367,11 +1371,11 @@ yyreduce:
                                                         YYERROR;
                                                     }
                                                 }
-#line 1371 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1375 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 94 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 98 "SyntacticDefinitions.y" /* yacc.c:1646  */
     {
                                                     int callability = getCallability(symbolsTable, (yyvsp[-1].string), (yyvsp[0].arguments).argCount);
 
@@ -1384,35 +1388,39 @@ yyreduce:
                                                         YYERROR;
                                                     }
                                                 }
-#line 1388 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1392 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 25:
-#line 108 "SyntacticDefinitions.y" /* yacc.c:1646  */
+#line 112 "SyntacticDefinitions.y" /* yacc.c:1646  */
     { (yyval.arguments).argCount = 0; }
-#line 1394 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1398 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 26:
-#line 109 "SyntacticDefinitions.y" /* yacc.c:1646  */
-    { memcpy((yyval.arguments).argValues, (yyvsp[-1].arguments).argValues, 9 * sizeof(double)); (yyval.arguments).argCount = (yyvsp[-1].arguments).argCount; }
-#line 1400 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 113 "SyntacticDefinitions.y" /* yacc.c:1646  */
+    {
+                                                    (yyval.arguments).argValues = (double*) malloc((yyvsp[-1].arguments).argCount * sizeof(double));
+                                                    memcpy((yyval.arguments).argValues, stack, (yyvsp[-1].arguments).argCount * sizeof(double));
+                                                    (yyval.arguments).argCount = (yyvsp[-1].arguments).argCount;
+                                                }
+#line 1408 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 27:
-#line 112 "SyntacticDefinitions.y" /* yacc.c:1646  */
-    { (yyval.arguments).argValues[(yyvsp[-2].arguments).argCount] = (yyvsp[0].value); (yyval.arguments).argCount = (yyvsp[-2].arguments).argCount + 1; }
-#line 1406 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 120 "SyntacticDefinitions.y" /* yacc.c:1646  */
+    { ensureStackCapacity((yyvsp[-2].arguments).argCount + 1); stack[(yyvsp[-2].arguments).argCount] = (yyvsp[0].value); (yyval.arguments).argCount = (yyvsp[-2].arguments).argCount + 1; }
+#line 1414 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
   case 28:
-#line 113 "SyntacticDefinitions.y" /* yacc.c:1646  */
-    { (yyval.arguments).argValues[0] = (yyvsp[0].value); (yyval.arguments).argCount = 1; }
-#line 1412 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 121 "SyntacticDefinitions.y" /* yacc.c:1646  */
+    { ensureStackCapacity(1); stack[0] = (yyvsp[0].value); (yyval.arguments).argCount = 1; }
+#line 1420 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1416 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
+#line 1424 "SyntacticDefinitions.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1640,4 +1648,12 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 116 "SyntacticDefinitions.y" /* yacc.c:1906  */
+#line 124 "SyntacticDefinitions.y" /* yacc.c:1906  */
+
+
+void ensureStackCapacity(int capacity) {
+    if(capacity > stackSize) {
+        stackSize += STACK_SIZE_STEP;
+        stack = realloc(stack, stackSize * sizeof(double));
+    }
+}

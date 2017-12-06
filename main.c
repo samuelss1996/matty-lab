@@ -7,15 +7,13 @@
 
 void printWelcome();
 
-// TODO dynamic argValues array
-// TODO handle arithmetic exceptions
-// TODO why symbols table is void* in bison file
 // TODO multiple statements in one line
 // TODO allow ';' after keywords
 // TODO allow multiple ';' together
-// TODO improve error management
-// TODO maybe supply file as argument
 // TODO maybe include functions like avg(x,y,z...)
+// TODO improve error management
+// TODO why symbols table is void* in bison file
+// TODO maybe supply file as argument
 // TODO maybe add data types
 int main() {
     SymbolsTable symbolsTable;
