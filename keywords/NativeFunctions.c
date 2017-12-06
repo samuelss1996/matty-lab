@@ -92,9 +92,9 @@ double _intRandom(double *arguments) {
 
 double _help(double *arguments) {
     FILE* helpFile = fopen(HELP_MESSAGE_FILE, "rb");
-    char helpContent[2048];
+    char helpContent[8192];
 
-    fread(helpContent, 1, 2048, helpFile);
+    fread(helpContent, 1, 8192, helpFile);
     printf("%s", helpContent);
 
     return 0;

@@ -11,7 +11,6 @@ extern int readingFile;
 void printWelcome();
 void parseArguments(int argc, char **argv);
 
-// TODO maybe supply file as argument
 int main(int argc, char **argv) {
     SymbolsTable symbolsTable;
 

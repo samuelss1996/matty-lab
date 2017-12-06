@@ -1,1 +1,78 @@
-Ayuda
+==| Numeros |==
+    Se pueden introducir numeros en la calculadora, tanto enteros como numeros flotantes en notacion
+    cientifica. Algunos ejemplos validos son los siguientes:
+        5
+        1.0
+        2.
+        .3
+        1e-6
+        2e6
+        3e+6
+
+==| Operadores y simbolos |==
+    '+': Suma dos numeros. Ejemplo: 3 + 2 (imprime 5)
+    '-': Resta dos numeros. Ejemplo: 3 - 2 (imprime 1)
+    '*': Multiplica dos numeros. Ejemplo: 3 * 2 (imprime 6)
+    '/': Divide dos numeros. Ejemplo: 3 / 2 (imprime 1.5)
+    '^': Eleva un numero a otro. Ejemplo 3^2 (imprime 9).
+    '(' y ')': Permiten agrupar expresiones, dandoles precedencia a estas. Ejemplo: 2 * (1-1) (imprime 0)
+
+==| Variables |==
+    'x': Obtiene el valor de la variable 'x'
+    'x = {expresion}': Asigna a la variable 'x' el valor de {expresion}. Ejemplo: x = 2 + 3
+
+    Las asignaciones son expresiones, por tanto el siguiente comando es valido:
+        y = x = 3 * 2
+
+        Al ejecutarlo, 'y' y 'x' tomaran el valor 6. Ademas, como la asignacion es una expresion,
+        el valor se imprime por pantalla.
+
+==| Constantes |==
+    Funcionan de manera similar a las varibles, pero no se les puede asignar un valor en linea de comandos,
+    ya tienen uno por defecto y no es posible cambiarlo. Se define las siguientes constantes:
+        - pi: El numero pi, la proporcion entre la longitud de una circunferencia y su diametro.
+        - e: El numero e, base de los logaritmos naturales.
+
+==| Funciones |==
+    'func(x,y)': Llama a la funcion 'func', pasando como argumentos los valores de las variables 'x' e 'y'.
+    Las llamadas a funciones son expresiones, por lo que siempre devuelven un valor.
+
+    El usuario no puede definir nuevas funciones. Sin embargo, MaTTY Lab cuenta con una amplia variedad de
+    las funciones matematicas. En concreto:
+        - acos(x): Devuelve el arcocoseno de 'x' en radianes
+        - asin(x): Devuelve el arcoseno de 'x' en radianes
+        - atan(x): Devuelve el arcotangente de 'x' en radianes
+        - atan2(x, y): Devuelve el arcotangente en radianes de 'x'/'y', basandose en los signos de ambos para
+    determinar el cuadrante correcto
+        - cos(x): Devuelve el coseno del angulo en radianes 'x'
+        - cosh(x): Devuelve el coseno hiperbolico de 'x'
+        - sin(x): Devuelve el seno del angulo en radianes 'x'
+        - sinh(x): Devuelve el seno hiperbolico de 'x'
+        - tanh(x): Devuelve la tangente hiperbolica de 'x'
+        - exp(x): Devuelve el valor del numero e elevado a 'x'
+        - ldexp(x, y): Devuelve 'x' * 2^'y'
+        - log(x): Devuelve el logaritmo natural (base e) de 'x'
+        - log10(x): Devuelve el logaritmo en base 10 de 'x'
+        - sqrt(x): Devuelve la raiz cuadrada de 'x'
+        - ceil(x): Devuelve el menor entero mayor o igual a 'x'
+        - fabs(x): Devuelve el valor absoluto de 'x'
+        - floor(x): Devuelve el mayor entero menor o igual a 'x'
+        - fmod(x, y): Devuelve el resto de dividir 'x' entre 'y'
+
+    Ademas, se proporcionan otras funciones no matematicas pero igualmente utiles:
+        - random(): Devuelve un numero aleatorio decimal entre 0 y 1.
+        - intRandom(x, y): Devuelve un numero entero aleatorio comprendido entre 'x' e 'y' (ambos inclusive)
+
+==| Sentencias |==
+    Las sentencias se diferencian de las expresiones en que su valor no se muestra por pantalla. Una sentencia
+    se define como cualquier expresion seguida del caracter ';'. Los siguientes son ejemplos de sentencias validas:
+        3 + 2; // Computa la suma, pero no la imprime por pantalla
+        x = 4 + 3; // Asigna a 'x' el valor 7, tras realizar la suma. El valor no se imprime por pantalla
+
+==| Sentencias especiales |==
+    Ademas de las sentencias mecionadas en el apartado anterior, Matty Lab incluye las siguientes sentencias especiales:
+        help: Imprime este mensaje de ayuda
+        who: Imprime las variables definidas por el usuario, junto a sus valores
+        clear: Elimina todas las variables definidas por el usuario durante la sesion
+        load "ejemplo": Carga el archivo 'ejemplo' y ejecuta su contenido
+        exit: Termina la sesion y sale del programa
