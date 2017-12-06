@@ -15,7 +15,6 @@ CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o: ../syntactic/SyntacticDefinitions.t
 CMakeFiles/MaTTY_Lab.dir/lexical/lex.yy.c.o: ../lexical/lex.yy.c
 
 CMakeFiles/MaTTY_Lab.dir/main.c.o: ../Definitions.h
-CMakeFiles/MaTTY_Lab.dir/main.c.o: ../errors/Errors.h
 CMakeFiles/MaTTY_Lab.dir/main.c.o: ../keywords/NativeFunctions.h
 CMakeFiles/MaTTY_Lab.dir/main.c.o: ../symbols/SymbolsTable.h
 CMakeFiles/MaTTY_Lab.dir/main.c.o: ../syntactic/SyntacticDefinitions.tab.h

@@ -3,7 +3,6 @@
 #include <SymbolsTable.h>
 #include <lexical/lex.yy.h>
 #include <errors/Errors.h>
-#include <time.h>
 
 SymbolsTable* symbolsTable;
 
@@ -80,8 +79,6 @@ double _fmod(double * arguments) {
 }
 
 double _random(double *arguments) {
-    srand((unsigned int) time(NULL));
-
     return rand() / (float) RAND_MAX;
 }
 
@@ -112,6 +109,11 @@ double _who(double *arguments) {
         }
     }
 
+    return 0;
+}
+
+double _clear(double *arguments) {
+    clearSymbolsTable(symbolsTable);
     return 0;
 }
 

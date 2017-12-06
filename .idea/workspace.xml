@@ -12,14 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c3a37b2-b954-4659-86fd-cdacb973069e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/samuel.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/samuel.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MaTTY_Lab.dir/main.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MaTTY_Lab.dir/main.c.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/MaTTY_Lab" afterPath="$PROJECT_DIR$/cmake-build-debug/MaTTY_Lab" />
-      <change beforePath="$PROJECT_DIR$/keywords/NativeFunctions.c" afterPath="$PROJECT_DIR$/keywords/NativeFunctions.c" />
-      <change beforePath="$PROJECT_DIR$/keywords/NativeFunctions.h" afterPath="$PROJECT_DIR$/keywords/NativeFunctions.h" />
       <change beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
-      <change beforePath="$PROJECT_DIR$/symbols/SymbolsTable.c" afterPath="$PROJECT_DIR$/symbols/SymbolsTable.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,11 +26,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="340">
+              <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -44,7 +38,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SymbolsTable.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SymbolsTable.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/symbols/SymbolsTable.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -57,9 +51,8 @@
       <file leaf-file-name="NativeFunctions.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keywords/NativeFunctions.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="81" column="33" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="33" />
-              <caret line="87" column="36" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="36" />
+            <state relative-caret-position="33">
+              <caret line="82" column="37" lean-forward="true" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -123,10 +116,10 @@
         <option value="$PROJECT_DIR$/errors/Errors.h" />
         <option value="$PROJECT_DIR$/syntactic/SyntacticDefinitions.y" />
         <option value="$PROJECT_DIR$/Definitions.h" />
-        <option value="$PROJECT_DIR$/main.c" />
-        <option value="$PROJECT_DIR$/keywords/NativeFunctions.c" />
         <option value="$PROJECT_DIR$/keywords/NativeFunctions.h" />
         <option value="$PROJECT_DIR$/symbols/SymbolsTable.c" />
+        <option value="$PROJECT_DIR$/keywords/NativeFunctions.c" />
+        <option value="$PROJECT_DIR$/main.c" />
       </list>
     </option>
   </component>
@@ -257,12 +250,12 @@
       <workItem from="1512324431758" duration="6536000" />
       <workItem from="1512335426640" duration="9000" />
       <workItem from="1512415587603" duration="7261000" />
-      <workItem from="1512485250223" duration="24195000" />
+      <workItem from="1512485250223" duration="25345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60942000" />
+    <option name="totallyTimeSpent" value="62092000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -275,6 +268,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="156" width="1920" height="1017" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33188248" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -288,7 +282,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32535365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32535365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -690,27 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/keywords/NativeFunctions.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="81" column="33" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="33" />
-          <caret line="87" column="36" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/keywords/NativeFunctions.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -724,6 +697,26 @@
         <state relative-caret-position="272">
           <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keywords/NativeFunctions.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="82" column="37" lean-forward="true" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -22,6 +22,7 @@ double _intRandom(double *arguments);
 
 double _help(double *arguments);
 double _who(double *arguments);
+double _clear(double *arguments);
 int _load(char *filename);
 
 void setSymbolsTable(void* symbolsTable);

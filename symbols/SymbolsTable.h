@@ -15,4 +15,5 @@ int getAssignability(SymbolsTable* symbolsTable, char *name);
 int getCallability(SymbolsTable* symbolsTable, char *functionName, int suppliedArgsCount);
 double callFunction(SymbolsTable* symbolsTable, char* functionName, double *arguments);
 char** getAllSymbols(SymbolsTable* symbolsTable);
+void clearSymbolsTable(SymbolsTable* symbolsTable);
 void destroySymbolsTable(SymbolsTable* symbolsTable);

@@ -3,22 +3,24 @@
 #include <SyntacticDefinitions.tab.h>
 #include <SymbolsTable.h>
 #include <NativeFunctions.h>
-#include <errors/Errors.h>
+#include <time.h>
 
 void printWelcome();
 
-// TODO improve error management
-// TODO maybe add data types
-// TODO dynamic argValues array
+// TODO add clear workspace command
 // TODO maybe add more operators
-// TODO handle arithmetic exceptions
-// TODO add 'random' function for the lolz
 // TODO create 'prompt' function, which should perform a fflush
+// TODO maybe print as double instead of float
+// TODO improve error management
+// TODO dynamic argValues array
+// TODO handle arithmetic exceptions
 // TODO why symbols table is void* in bison file
 // TODO multiple statements in one line
 // TODO allow ';' after keywords
 // TODO allow multiple ';' together
-// TODO maybe print as double instead of float
+// TODO maybe supply file as argument
+// TODO maybe include functions like avg(x,y,z...)
+// TODO maybe add data types
 int main() {
     SymbolsTable symbolsTable;
 
@@ -28,6 +30,7 @@ int main() {
     printWelcome();
     printf("> ");
 
+    srand((unsigned int) time(NULL));
     yyparse(&symbolsTable);
 
     return EXIT_SUCCESS;

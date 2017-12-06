@@ -83,18 +83,24 @@ void insertHash(HashTable* hashTable, char* key, SymbolsTableValue* value) {
     }
 }
 
-/**
- * Destruir la tabla hash, liberando todos los recursos
- * @param hashTable La tabla hash
- */
-void destroyHashTable(HashTable* hashTable) {
+void clearHashTable(HashTable* hashTable) {
     int i;
 
     for (i = 0; i < (*hashTable)->capacity; ++i) {
         if((*hashTable)->elements[i] != NULL) {
             destroyList((*hashTable)->elements + i);
         }
+
+        (*hashTable)->elements[i] = NULL;
     }
+}
+
+/**
+ * Destruir la tabla hash, liberando todos los recursos
+ * @param hashTable La tabla hash
+ */
+void destroyHashTable(HashTable* hashTable) {
+    clearHashTable(hashTable);
 
     free((*hashTable)->elements);
     free(*hashTable);
