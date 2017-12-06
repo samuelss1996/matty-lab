@@ -22,6 +22,8 @@ int main() {
     srand((unsigned int) time(NULL));
     yyparse(&symbolsTable);
 
+    destroySymbolsTable(&symbolsTable);
+
     return EXIT_SUCCESS;
 }
 

@@ -9,6 +9,8 @@
 ..//Definitions.h
 
 ..//errors/Errors.h
+SymbolsTable.h
+-
 
 ..//lexical/lex.yy.h
 stdio.h
@@ -24,7 +26,17 @@ inttypes.h
 unistd.h
 -
 
+..//symbols/SymbolsTable.h
+LinkedList.h
+-
+Definitions.h
+-
+
+..//util/LinkedList.h
+
 ../errors/Errors.h
+SymbolsTable.h
+-
 
 ../keywords/NativeFunctions.h
 
@@ -58,6 +70,12 @@ LinkedList.h
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/errors/Errors.c
 stdio.h
+-
+Definitions.h
+-
+util/LinkedList.h
+-
+symbols/SymbolsTable.h
 -
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/keywords/NativeFunctions.c

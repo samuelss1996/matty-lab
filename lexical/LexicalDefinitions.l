@@ -50,6 +50,8 @@ String                  \"[^\"\n]*\"
 "("                                                     {column += yyleng; return '(';}
 ")"                                                     {column += yyleng; return ')';}
 
+.                                                       {column += yyleng; return yytext[0];}
+
 <<EOF>>													{column += yyleng; return END_OF_FILE;}
 
 %%

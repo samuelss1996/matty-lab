@@ -375,8 +375,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 19
-#define YY_END_OF_BUFFER 20
+#define YY_NUM_RULES 20
+#define YY_END_OF_BUFFER 21
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -386,7 +386,7 @@ struct yy_trans_info
 	};
 static yyconst flex_int16_t yy_accept[58] =
     {   0,
-        0,    0,   20,   19,    5,    4,   19,   17,   18,   11,
+        0,    0,   21,   19,    5,    4,   19,   17,   18,   11,
         9,   15,   10,   19,   12,    6,    6,   16,   14,    3,
        13,    3,    3,    3,    3,    5,    0,    8,    7,    7,
         6,    0,    0,    0,    6,    3,    3,    3,    3,    3,
@@ -892,16 +892,21 @@ YY_RULE_SETUP
 #line 51 "LexicalDefinitions.l"
 {column += yyleng; return ')';}
 	YY_BREAK
-case YY_STATE_EOF(INITIAL):
-#line 53 "LexicalDefinitions.l"
-{column += yyleng; return END_OF_FILE;}
-	YY_BREAK
 case 19:
 YY_RULE_SETUP
+#line 53 "LexicalDefinitions.l"
+{column += yyleng; return yytext[0];}
+	YY_BREAK
+case YY_STATE_EOF(INITIAL):
 #line 55 "LexicalDefinitions.l"
+{column += yyleng; return END_OF_FILE;}
+	YY_BREAK
+case 20:
+YY_RULE_SETUP
+#line 57 "LexicalDefinitions.l"
 ECHO;
 	YY_BREAK
-#line 905 "lex.yy.c"
+#line 910 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1900,7 +1905,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 55 "LexicalDefinitions.l"
+#line 57 "LexicalDefinitions.l"
 
 
 

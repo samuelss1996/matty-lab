@@ -1,4 +1,5 @@
 %parse-param {void* symbolsTable}
+%define parse.error verbose
 
 %{
 #include <math.h>
@@ -10,6 +11,7 @@
 int readingFile = 0;
 double *stack = NULL;
 int stackSize = 0;
+int handledError = 0;
 
 void ensureStackCapacity(int capacity);
 %}
@@ -48,7 +50,7 @@ input:            /* empty */
 ;
 
 line:             lineEnd
-                | error lineEnd
+                | error lineEnd                 { syntacticError(handledError); handledError = 0; }
                 | statement
                 | expression lineEnd            { printf("%.10g\n", $1); }
 ;
@@ -79,6 +81,7 @@ expression:       INTEGER_LIT                   { $$ = $1; }
                                                     } else {
                                                         errorDisplayingSymbolValue(readability, $1);
                                                         free($1);
+                                                        handledError = 1;
                                                         YYERROR;
                                                     }
                                                 }
@@ -92,6 +95,7 @@ expression:       INTEGER_LIT                   { $$ = $1; }
                                                     } else {
                                                         errorAssigningValue(assignability, $1);
                                                         free($1);
+                                                        handledError = 1;
                                                         YYERROR;
                                                     }
                                                 }
@@ -102,8 +106,9 @@ expression:       INTEGER_LIT                   { $$ = $1; }
                                                         $$ = callFunction(symbolsTable, $1, $2.argValues);
                                                         free($1);
                                                     } else {
-                                                        errorCallingFunction(callability, $1, $2.argCount);
+                                                        errorCallingFunction(callability, symbolsTable, $1, $2.argCount);
                                                         free($1);
+                                                        handledError = 1;
                                                         YYERROR;
                                                     }
                                                 }
