@@ -8,11 +8,8 @@
 void printWelcome();
 
 // TODO improve error management
-// TODO add constants
 // TODO maybe add data types
 // TODO dynamic argValues array
-// TODO add remaining functions
-// TODO prohibit redefinition of constants and functions
 // TODO maybe add more operators
 // TODO handle arithmetic exceptions
 // TODO add 'random' function for the lolz

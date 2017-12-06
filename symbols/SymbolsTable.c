@@ -22,7 +22,12 @@ typedef struct {
 
 typedef SymbolsTableStruct* SymbolsTable;
 
-NativeFunction nativeFunctions[] = {"sin", 1, _sin, "cos", 1, _cos, "atan", 1, _atan, "log", 1, _log, "exp", 1, _exp, "sqrt", 1, _sqrt, "help", 0, _help, "who", 0, _who, 0, 0, 0};
+NativeFunction nativeFunctions[] = {"acos", 1, _acos, "asin", 1, _asin, "atan", 1, _atan, "atan2", 2, _atan2, "cos", 1, _cos,
+                                    "cosh", 1, _cosh, "sin", 1, _sin, "sinh", 1, _sinh, "tanh", 1, _tanh, "exp", 1, _exp,
+                                    "ldexp", 2, _ldexp, "log", 1, _log, "log10", 1, _log10, "sqrt", 1, _sqrt, "ceil", 1, _ceil,
+                                    "fabs", 1, _fabs, "floor", 1, _floor, "fmod", 2, _fmod, "random", 0, _random, "intRandom", 2, _intRandom,
+                                    "help", 0, _help, "who", 0, _who, 0, 0, 0};
+
 Constant nativeConstants[] = {"e", M_E, "pi", M_PI, 0, 0};
 
 void addNativeValues(SymbolsTable *symbolsTable);
