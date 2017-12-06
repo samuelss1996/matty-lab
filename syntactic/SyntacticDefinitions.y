@@ -78,7 +78,19 @@ expression:       INTEGER_LIT                   { $$ = $1; }
                                                         YYERROR;
                                                     }
                                                 }
-                | IDENTIFIER '=' expression     { $$ = $3; assignVariable(symbolsTable, $1, $3); }
+                | IDENTIFIER '=' expression     {
+                                                    int assignability = getAssignability(symbolsTable, $1);
+
+                                                    if (assignability == ASSIGNABILITY_ASSIGNABLE) {
+                                                        assignVariable(symbolsTable, $1, $3);
+                                                        free($1);
+                                                        $$ = $3;
+                                                    } else {
+                                                        errorAssigningValue(assignability, $1);
+                                                        free($1);
+                                                        YYERROR;
+                                                    }
+                                                }
                 | IDENTIFIER arguments          {
                                                     int callability = getCallability(symbolsTable, $1, $2.argCount);
 

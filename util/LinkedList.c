@@ -163,12 +163,11 @@ void createVariable(SymbolsTableValue* symbolsTableValue, double value) {
     (*symbolsTableValue)->value.numericValue = value;
 }
 
-int getSymbolType(SymbolsTableValue* symbol) {
-    return (*symbol)->type;
-}
+void createConstant(SymbolsTableValue* symbol, double value) {
+    *symbol = (SymbolsTableValue) malloc(sizeof(SymbolsTableValueStruct));
 
-double getSymbolsTableValueAsNumber(SymbolsTableValue* symbolsTableValue) {
-    return (*symbolsTableValue)->value.numericValue;
+    (*symbol)->type = SYMBOL_TYPE_CONSTANT;
+    (*symbol)->value.numericValue = value;
 }
 
 void createFunction(SymbolsTableValue* symbol, double (*functionPointer)(double*), int argCount) {
@@ -177,6 +176,14 @@ void createFunction(SymbolsTableValue* symbol, double (*functionPointer)(double*
     (*symbol)->type = SYMBOL_TYPE_FUNCTION;
     (*symbol)->value.function.functionPointer = functionPointer;
     (*symbol)->value.function.argCount = argCount;
+}
+
+int getSymbolType(SymbolsTableValue* symbol) {
+    return (*symbol)->type;
+}
+
+double getSymbolsTableValueAsNumber(SymbolsTableValue* symbolsTableValue) {
+    return (*symbolsTableValue)->value.numericValue;
 }
 
 int getFunctionArgumentCount(SymbolsTableValue *symbols) {

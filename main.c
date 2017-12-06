@@ -3,6 +3,7 @@
 #include <SyntacticDefinitions.tab.h>
 #include <SymbolsTable.h>
 #include <NativeFunctions.h>
+#include <errors/Errors.h>
 
 void printWelcome();
 
@@ -20,6 +21,7 @@ void printWelcome();
 // TODO multiple statements in one line
 // TODO allow ';' after keywords
 // TODO allow multiple ';' together
+// TODO maybe print as double instead of float
 int main() {
     SymbolsTable symbolsTable;
 

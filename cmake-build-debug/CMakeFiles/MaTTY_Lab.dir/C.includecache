@@ -103,6 +103,8 @@ SymbolsTable.h
 -
 NativeFunctions.h
 -
+errors/Errors.h
+-
 
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/symbols/SymbolsTable.c
 stdlib.h
@@ -110,6 +112,8 @@ stdlib.h
 NativeFunctions.h
 -
 Definitions.h
+-
+math.h
 -
 HashTable.h
 /mnt/c/Users/Ada/GitHub/MaTTY Lab/symbols/HashTable.h

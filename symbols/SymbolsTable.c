@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <NativeFunctions.h>
 #include <Definitions.h>
+#include <math.h>
 
 #include "HashTable.h"
 
@@ -11,14 +12,20 @@ typedef struct {
 } NativeFunction;
 
 typedef struct {
+    char *constantName;
+    double value;
+} Constant;
+
+typedef struct {
     HashTable hashTable;
 } SymbolsTableStruct;
 
 typedef SymbolsTableStruct* SymbolsTable;
 
-void addNativeFunctions(SymbolsTable* symbolsTable);
 NativeFunction nativeFunctions[] = {"sin", 1, _sin, "cos", 1, _cos, "atan", 1, _atan, "log", 1, _log, "exp", 1, _exp, "sqrt", 1, _sqrt, "help", 0, _help, "who", 0, _who, 0, 0, 0};
+Constant nativeConstants[] = {"e", M_E, "pi", M_PI, 0, 0};
 
+void addNativeValues(SymbolsTable *symbolsTable);
 
 /**
  * Crea e inicializa la tabla de símbolos, rellenándola con las palabras reservadas
@@ -28,7 +35,7 @@ void createSymbolsTable(SymbolsTable* symbolsTable) {
     *symbolsTable = (SymbolsTable) malloc(sizeof(SymbolsTableStruct));
     createHashTable(&(*symbolsTable)->hashTable, SYMBOLS_HASH_TABLE_CAPACITY);
 
-    addNativeFunctions(symbolsTable);
+    addNativeValues(symbolsTable);
 }
 
 /**
@@ -97,6 +104,21 @@ int getReadability(SymbolsTable* symbolsTable, char *name) {
     return READABILITY_VARIABLE;
 }
 
+int getAssignability(SymbolsTable* symbolsTable, char *name) {
+    SymbolsTableValue symbol = findSymbol(symbolsTable, name);
+    int symbolType;
+
+    if(symbol != NULL) {
+        if((symbolType = getSymbolType(&symbol)) == SYMBOL_TYPE_FUNCTION) {
+            return ASSIGNABILITY_SYMBOL_FUNCTION;
+        } else if(symbolType == SYMBOL_TYPE_CONSTANT) {
+            return ASSIGNABILITY_SYMBOL_CONSTANT;
+        }
+    }
+
+    return ASSIGNABILITY_ASSIGNABLE;
+}
+
 int getCallability(SymbolsTable* symbolsTable, char *functionName, int suppliedArgsCount) {
     SymbolsTableValue symbol = findSymbol(symbolsTable, functionName);
 
@@ -130,9 +152,16 @@ void destroySymbolsTable(SymbolsTable* symbolsTable) {
     free(*symbolsTable);
 }
 
-void addNativeFunctions(SymbolsTable* symbolsTable) {
+void addNativeValues(SymbolsTable *symbolsTable) {
     SymbolsTableValue* symbol;
     int i;
+
+    for(i = 0; nativeConstants[i].constantName != 0; i++) {
+        symbol = malloc(sizeof(SymbolsTableValue));
+        createConstant(symbol, nativeConstants[i].value);
+
+        addSymbol(symbolsTable, nativeConstants[i].constantName, symbol);
+    }
 
     for(i = 0; nativeFunctions[i].functionName != 0; i++) {
         symbol = malloc(sizeof(SymbolsTableValue));

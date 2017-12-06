@@ -5,6 +5,11 @@ void yyerror(void* symbolsTable, char *string) {
 }
 
 // TODO
+void errorAssigningValue(int errorCode, char* symbolName) {
+    printf("Error %d\n", errorCode);
+}
+
+// TODO
 void errorCallingFunction(int errorCode, char* functionName, int suppliedArgsCount) {
     printf("Error %d\n", errorCode);
 }
