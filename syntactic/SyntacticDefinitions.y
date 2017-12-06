@@ -30,7 +30,8 @@ void ensureStackCapacity(int capacity);
 %token <value> INTEGER_LIT
 %token <value> FLOATING_LIT
 %token <string> KEYWORD
-%token <string> LOAD
+%token LOAD
+%token EXIT
 %token END_OF_FILE;
 
 %type <value> expression
@@ -60,7 +61,8 @@ lineEnd:        '\n'
 
 statement:        expression ';' optSemicolons lineEnd
                 | KEYWORD optSemicolons lineEnd               { callFunction(symbolsTable, $1, NULL); free($1); }
-                | LOAD STRING_LIT optSemicolons lineEnd       { readingFile = _load($2); free($1); free($2); }
+                | LOAD STRING_LIT optSemicolons lineEnd       { readingFile = _load($2); free($2); }
+                | EXIT optSemicolons lineEnd                  { YYACCEPT; }
 ;
 
 expression:       INTEGER_LIT                   { $$ = $1; }

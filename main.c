@@ -7,7 +7,7 @@
 
 void printWelcome();
 
-// TODO improve error management
+// TODO add exit command
 // TODO why symbols table is void* in bison file
 // TODO maybe supply file as argument
 int main() {

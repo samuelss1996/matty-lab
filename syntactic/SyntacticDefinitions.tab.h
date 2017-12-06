@@ -51,8 +51,9 @@ extern int yydebug;
     FLOATING_LIT = 261,
     KEYWORD = 262,
     LOAD = 263,
-    END_OF_FILE = 264,
-    NEGATIVE = 265
+    EXIT = 264,
+    END_OF_FILE = 265,
+    NEGATIVE = 266
   };
 #endif
 
@@ -70,7 +71,7 @@ union YYSTYPE
         double *argValues;
     } arguments;
 
-#line 74 "SyntacticDefinitions.tab.h" /* yacc.c:1909  */
+#line 75 "SyntacticDefinitions.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
